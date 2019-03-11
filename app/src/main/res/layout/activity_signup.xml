@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.SignupActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/user_profile"
+                android:gravity="center" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="75dp"
+                android:background="@drawable/camera" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:hint="Name"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/dl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint="D.L. NO"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/emailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint="Email ID"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/adharcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint="Adhar Card"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint="Age"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint=" Mobile"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:hint="Password"
+                android:inputType="number"
+                android:textColor="@color/logintextcolor"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="SIGN IN"
+            android:textColor="@color/white"
+
+            />
+    </LinearLayout>
+</ScrollView>
