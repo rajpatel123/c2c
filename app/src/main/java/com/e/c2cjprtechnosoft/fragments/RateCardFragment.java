@@ -10,10 +10,13 @@ import android.view.ViewGroup;
 
 import com.e.c2cjprtechnosoft.R;
 
-public class Support_Fragment extends Fragment {
+public class RateCardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return  inflater.inflate(R.layout.fragment_support,container,false);
+     View view= inflater.inflate(R.layout.fragment_rate_card,container,false);
+     getActivity().setTitle("Rate Card");
+     return view;
+
     }
 }

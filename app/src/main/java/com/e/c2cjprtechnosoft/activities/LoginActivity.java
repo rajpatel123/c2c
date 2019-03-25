@@ -38,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         _loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Validation();
-
+                Intent intent=new Intent(LoginActivity.this,NavigationActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -48,34 +48,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private void Validation() {
-        String mobile_str, pass_str;
-
-        boolean check = true;
-        mobile_str = _editMobile.getText().toString();
-        pass_str = _editPassword.getText().toString();
-
-        if (TextUtils.isEmpty(mobile_str.trim()) || mobile_str.length() == 0) {
-
-            _editMobile.setError("Please enter valid mobile no");
-            check = false;
-
-
-        }
-        if (TextUtils.isEmpty(pass_str.trim()) || pass_str.length() == 0) {
-            _editPassword.setError("Please enter valid password");
-            check = false;
-
-
-        }
-
-        if (check == true) {
-            Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
 }

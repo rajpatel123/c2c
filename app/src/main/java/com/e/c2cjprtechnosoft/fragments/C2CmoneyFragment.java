@@ -15,6 +15,8 @@ public class C2CmoneyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_c2c_money,container,false);
+        View view= inflater.inflate(R.layout.fragment_c2c_money,container,false);
+        getActivity().setTitle("C2C Money");
+        return view;
     }
 }

@@ -15,26 +15,26 @@ import android.widget.TextView;
 
 import com.e.c2cjprtechnosoft.R;
 import com.e.c2cjprtechnosoft.fragments.AboutFragment;
-import com.e.c2cjprtechnosoft.fragments.Book_your_ride_Fragment;
+import com.e.c2cjprtechnosoft.fragments.BookYourRideFragment;
 import com.e.c2cjprtechnosoft.fragments.C2CmoneyFragment;
-import com.e.c2cjprtechnosoft.fragments.Know_Your_ride_Fragment;
+import com.e.c2cjprtechnosoft.fragments.KnowYourRideFragment;
 import com.e.c2cjprtechnosoft.fragments.PaymentFragment;
-import com.e.c2cjprtechnosoft.fragments.Rate_Card_Fragment;
-import com.e.c2cjprtechnosoft.fragments.Support_Fragment;
+import com.e.c2cjprtechnosoft.fragments.RateCardFragment;
+import com.e.c2cjprtechnosoft.fragments.SupportFragment;
 import com.e.c2cjprtechnosoft.fragments.Your_Rider_Fragment;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-         private  TextView textViewprofile;
-         NavigationView navigationView;
+    private TextView textViewprofile;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        navigationView=findViewById(R.id.nav_view);
-        View viewHeader=navigationView.inflateHeaderView(R.layout.nav_header_navigation);
-        textViewprofile=viewHeader.findViewById(R.id.myprofile);
+        navigationView = findViewById(R.id.nav_view);
+        View viewHeader = navigationView.inflateHeaderView(R.layout.nav_header_navigation);
+        textViewprofile = viewHeader.findViewById(R.id.myprofile);
         textViewprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,19 +45,6 @@ public class NavigationActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -66,6 +53,12 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.framecontainer, new BookYourRideFragment())
+                .commit();
+
     }
 
     @Override
@@ -108,15 +101,23 @@ public class NavigationActivity extends AppCompatActivity
 
         if (id == R.id.book_your_ride) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new Book_your_ride_Fragment()).commit();
-
+           /*Intent intent=new Intent(NavigationActivity.this,MapsActivity.class);
+           startActivity(intent);
+*/
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.framecontainer, new BookYourRideFragment())
+                    .commit();
         } else if (id == R.id.your_rider) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new Your_Rider_Fragment()).commit();
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.framecontainer, new Your_Rider_Fragment())
+                    .commit();
 
         } else if (id == R.id.know_your_ride) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new Know_Your_ride_Fragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new KnowYourRideFragment()).commit();
 
         } else if (id == R.id.mygroup) {
 
@@ -133,23 +134,38 @@ public class NavigationActivity extends AppCompatActivity
 
         } else if (id == R.id.rate_card) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new Rate_Card_Fragment()).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.framecontainer, new RateCardFragment())
+                    .addToBackStack(null).commit();
 
         } else if (id == R.id.c2c_money) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new C2CmoneyFragment()).commit();
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.framecontainer, new C2CmoneyFragment())
+                    .addToBackStack(null).commit();
 
         } else if (id == R.id.payment) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new PaymentFragment()).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.framecontainer, new PaymentFragment())
+                    .addToBackStack(null).commit();
 
         } else if (id == R.id.support) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new Support_Fragment()).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.framecontainer, new SupportFragment())
+                    .addToBackStack(null).commit();
 
         } else if (id == R.id.about) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.framecontainer, new AboutFragment()).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.framecontainer, new AboutFragment())
+                    .addToBackStack(null).commit();
 
         }
 

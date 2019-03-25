@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 
 import com.e.c2cjprtechnosoft.R;
 
-public class Know_Your_ride_Fragment extends Fragment {
+public class SupportFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.know_your_ride,container,false);
+        View view=  inflater.inflate(R.layout.fragment_support,container,false);
+        getActivity().setTitle("Support");
+        return view;
     }
 }

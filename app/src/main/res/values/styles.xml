@@ -17,6 +17,13 @@
         <item name="colorAccent">@color/logintextcolor</item>
     </style>
 
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/black_primary</item>
+        <item name="colorPrimaryDark">@color/logintextcolor</item>
+        <item name="colorAccent">@color/logintextcolor</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
