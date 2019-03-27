@@ -43,7 +43,8 @@
             android:label="Profile" />
         <activity
             android:name=".activities.NavigationActivity"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AppTheme4"
+            android:label=""/>
         <activity
             android:name=".activities.SignupActivity"
             android:theme="@style/AppTheme" />
