@@ -85,5 +85,6 @@ public class DropSearchActivity extends FragmentActivity implements OnMapReadyCa
         gMap = googleMap;
 
 
+
     }
 }
