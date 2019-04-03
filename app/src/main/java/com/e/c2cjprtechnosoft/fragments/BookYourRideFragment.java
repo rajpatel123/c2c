@@ -50,10 +50,10 @@ import com.google.android.gms.maps.model.PolylineOptions;
 
 public class BookYourRideFragment extends Fragment implements
         OnMapReadyCallback,
-        GoogleMap.OnMapLoadedCallback,
-        GoogleApiClient.ConnectionCallbacks,
+        GoogleMap.OnMapLoadedCallback
+        /*GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+        LocationListener*/{
 
     private CardView pickupLocation, dropLocation;
     private GoogleMap mMap;
@@ -84,7 +84,7 @@ public class BookYourRideFragment extends Fragment implements
       /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
         }*/
-        checkUserLocationPermission();
+       // checkUserLocationPermission();
         linearLayout = view.findViewById(R.id.linear_bottom);
 
         ((ViewGroup) view.findViewById(R.id.root)).getLayoutTransition()
@@ -122,8 +122,6 @@ public class BookYourRideFragment extends Fragment implements
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-
         if (ActivityCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
@@ -132,14 +130,9 @@ public class BookYourRideFragment extends Fragment implements
                 != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
 
-            buildgoogleApiClient();
+           // buildgoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
-
-
-
-
-
 
       /*  mMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveStartedListener() {
             @Override
@@ -167,6 +160,7 @@ public class BookYourRideFragment extends Fragment implements
                 Log.d("VISIBLE", "Camera Changes");
             }
         });
+
       /*  mMap.setOnCameraMoveCanceledListener(new GoogleMap.OnCameraMoveCanceledListener() {
             @Override
             public void onCameraMoveCanceled() {
@@ -176,6 +170,7 @@ public class BookYourRideFragment extends Fragment implements
             }
         });
 */
+
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         // googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         // googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
@@ -183,7 +178,7 @@ public class BookYourRideFragment extends Fragment implements
         // googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
         LatLng noida = new LatLng(28.595728, 77.339391);
         mMap.addMarker(new MarkerOptions().position(noida).title("Noida"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(noida,10.0F));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(noida,10.0F));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(noida, 15), 3000, null);
 
         //mMap.setMinZoomPreference(5f);
@@ -219,7 +214,7 @@ public class BookYourRideFragment extends Fragment implements
         }
 
     }
-
+/*
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -236,7 +231,7 @@ public class BookYourRideFragment extends Fragment implements
                 }
                 return;
         }
-    }
+    }*/
 
     protected synchronized void buildgoogleApiClient() {
         googleApiClient = new GoogleApiClient.Builder(getActivity())
@@ -255,6 +250,7 @@ public class BookYourRideFragment extends Fragment implements
         }
 
     }
+/*
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -269,8 +265,9 @@ public class BookYourRideFragment extends Fragment implements
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, (LocationListener) getActivity());
 
     }
+*/
 
-    @Override
+  /*  @Override
     public void onConnectionSuspended(int i) {
 
     }
@@ -305,5 +302,5 @@ public class BookYourRideFragment extends Fragment implements
         }
 
 
-    }
+    }*/
 }
