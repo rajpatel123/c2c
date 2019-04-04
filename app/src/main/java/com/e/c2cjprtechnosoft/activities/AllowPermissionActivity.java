@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 
 public class AllowPermissionActivity extends AppCompatActivity implements View.OnClickListener {
 
-@BindView(R.id.allowBtn)
+    @BindView(R.id.allowBtn)
     Button allowButton;
 
     @Override
@@ -27,8 +27,7 @@ public class AllowPermissionActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
 
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.allowBtn:
                 allowPermission();
 
@@ -37,7 +36,7 @@ public class AllowPermissionActivity extends AppCompatActivity implements View.O
     }
 
     private void allowPermission() {
-        Intent intent=new Intent(AllowPermissionActivity.this,GPSPermissionActivity.class);
+        Intent intent = new Intent(AllowPermissionActivity.this, GPSPermissionActivity.class);
         startActivity(intent);
     }
 }

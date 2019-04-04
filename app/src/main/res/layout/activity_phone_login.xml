@@ -16,25 +16,26 @@
             android:layout_height="@dimen/frame_height"
             android:background="@drawable/login_gradient_background">
 
-            <RelativeLayout
+        <!--    <RelativeLayout
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content">-->
 
                 <ImageView
+
+                    android:layout_gravity="center_horizontal"
                     android:id="@+id/image_logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/margin_fifteen"
+                    android:layout_marginTop="@dimen/margin_20"
                     android:src="@drawable/logo" />
 
                 <TextView
+                    android:layout_marginTop="@dimen/margin_110"
                     android:layout_below="@id/image_logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
                     android:paddingLeft="@dimen/padding_ten"
                     android:paddingTop="@dimen/padding_five"
                     android:paddingRight="@dimen/padding_ten"
@@ -43,7 +44,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/txt_heading"
                     android:textStyle="bold" />
-            </RelativeLayout>
+           <!-- </RelativeLayout>-->
 
             <ImageView
                 android:layout_width="match_parent"
