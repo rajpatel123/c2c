@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.e.c2cjprtechnosoft.R;
 
@@ -36,7 +37,8 @@ public class AllowPermissionActivity extends AppCompatActivity implements View.O
     }
 
     private void allowPermission() {
-        Intent intent = new Intent(AllowPermissionActivity.this, GPSPermissionActivity.class);
-        startActivity(intent);
+       /* Intent intent = new Intent(AllowPermissionActivity.this, GPSPermissionActivity.class);
+        startActivity(intent);*/
+        Toast.makeText(this, "Permission Access", Toast.LENGTH_SHORT).show();
     }
 }
