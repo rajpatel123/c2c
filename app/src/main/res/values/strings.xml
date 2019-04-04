@@ -8,6 +8,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="login_txt">Explore new ways to \n travel with C2C</string>
+    <string name="login_txt_second">Please enter your mobile number to \n proceed</string>
 
 
 </resources>
