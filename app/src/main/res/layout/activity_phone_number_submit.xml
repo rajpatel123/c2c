@@ -11,10 +11,10 @@
         android:id="@+id/linear_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="@dimen/margin_5">
 
         <ImageView
-
+           android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow_icon" />
@@ -25,17 +25,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linear_one"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="@dimen/margin_20"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-
+            android:layout_margin="@dimen/margin_10"
+            android:padding="@dimen/padding_5"
             android:text="@string/login_txt_second"
             android:textColor="@color/black"
-            android:textSize="22sp" />
+            android:textSize="@dimen/txt_heading" />
 
     </LinearLayout>
 
@@ -44,9 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linear_second"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_40"
+        android:layout_marginRight="@dimen/margin_10"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -54,12 +54,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_10"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/flag_width"
+                android:layout_height="@dimen/flag_height"
                 android:layout_gravity="center"
                 android:src="@drawable/indian_flag" />
 
@@ -68,10 +68,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:drawableRight="@drawable/open_arrow"
-                android:padding="5dp"
+                android:padding="@dimen/padding_5"
                 android:text="+91"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="@dimen/title" />
 
 
         </LinearLayout>
@@ -86,6 +86,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/edit_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -104,24 +105,32 @@
         android:layout_width="match_parent"
         android:layout_height="1pt"
         android:layout_below="@id/linear_third"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15"
         android:background="@color/login_top_color" />
 
+<LinearLayout
 
+    android:layout_marginTop="@dimen/margin_30"
+    android:orientation="vertical"
+    android:id="@+id/linear_five"
+    android:layout_below="@id/linear_four"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+</LinearLayout>
     <Button
+        android:layout_marginTop="@dimen/margin_30"
         android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear_four"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
+        android:layout_below="@id/linear_five"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_30"
         android:background="@drawable/next_button_background"
         android:text="Next"
-
         android:textColor="@color/login_top_color"
-        android:textSize="20sp"
+        android:textSize="@dimen/title"
         android:textStyle="bold" />
 
 </RelativeLayout>

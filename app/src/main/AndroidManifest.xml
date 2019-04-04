@@ -17,9 +17,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.PhoneNumberSubmitActivity"
+        <activity android:name=".activities.GPSPermissionActivity"></activity>
+        <activity
+            android:name=".activities.AllowPermissionActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".activities.VerifyOtpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".activities.PhoneNumberSubmitActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".activities.PhoneLoginActivity"
             android:screenOrientation="portrait"
