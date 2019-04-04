@@ -141,7 +141,7 @@ public class NavigationActivity extends AppCompatActivity
 
         } else if (id == R.id.myoffers) {
 
-        } else if (id == R.id.rate_card) {
+        } /*else if (id == R.id.rate_card) {
 
             getSupportFragmentManager()
                     .beginTransaction()
@@ -177,7 +177,7 @@ public class NavigationActivity extends AppCompatActivity
                     .addToBackStack(null).commit();
 
         }
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

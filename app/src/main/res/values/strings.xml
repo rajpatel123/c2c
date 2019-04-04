@@ -10,6 +10,15 @@
     <string name="title_activity_maps">Map</string>
     <string name="login_txt">Explore new ways to \n travel with C2C</string>
     <string name="login_txt_second">Please enter your mobile number to \n proceed</string>
+    <string name="verify_txt">We will auto verify the OTP send to</string>
+    <string name="opt_txt">Auto verify your</string>
+    <string name="opt_txt_two">OTP in ( 00:10 )</string>
+    <string name="allow_location_txt">Have a hassle-free booking experience by given us</string>
+    <string name="location_txt">Location ( for finding available rides )</string>
+    <string name="location_phone_txt">Phone ( for account security verification )</string>
+    <string name="gps_txt" >All C2C cabe to turn on your phone GPS for</string>
+    <string name="gps_txt_one" >accurate pickup</string>
+    <string name="nav_profile_progress_txt">Complete your Profile( 35% )</string>
 
 
 </resources>

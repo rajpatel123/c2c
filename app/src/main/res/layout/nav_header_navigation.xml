@@ -2,61 +2,110 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_marginTop="@dimen/margin_10"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 
     <RelativeLayout
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15"
+        android:id="@+id/relative_one"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/margin_90"
         android:orientation="horizontal">
 
         <ImageView
+            android:layout_marginTop="@dimen/margin_20"
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/signupimage"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:background="@drawable/profile_image"
             android:contentDescription="@string/nav_header_desc"
-            android:paddingTop="@dimen/nav_header_vertical_spacing" />
+            />
 
         <LinearLayout
+            android:id="@+id/linear_middle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_toRightOf="@id/imageView"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_5">
 
 
             <TextView
+
                 android:id="@+id/myprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="25dp"
-                android:text="My Profile"
-                android:textColor="@color/logintextcolor"
-                android:textSize="15dp" />
+                android:maxLines="1"
+                android:text="Rishabh Saxena"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_title" />
 
             <TextView
                 android:id="@+id/mobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
                 android:layout_marginTop="5dp"
                 android:text="+91-9839194369"
-                android:textColor="@color/logintextcolor" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+
+            android:layout_toRightOf="@id/linear_middle"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_5">
+
+
+            <ImageView
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/nav_profile_open_icon" />
+
         </LinearLayout>
 
 
     </RelativeLayout>
 
-    <View
+    <LinearLayout
+        android:padding="@dimen/padding_5"
+        android:background="@color/vediobackgroundColor"
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/logintextcolor" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_3"
+            android:text="@string/nav_profile_progress_txt"
+            android:textColor="@color/simple_white"
+            android:textSize="@dimen/title" />
+
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_20"
+            android:max="100"
+            android:progressBackgroundTint="@color/orange"
+            android:progress="47" />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

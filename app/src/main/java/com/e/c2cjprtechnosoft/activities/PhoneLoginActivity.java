@@ -22,7 +22,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_login);
         ButterKnife.bind(this);
-      linearLayoutPhone.setOnClickListener(this);
+        linearLayoutPhone.setOnClickListener(this);
     }
 
     @Override

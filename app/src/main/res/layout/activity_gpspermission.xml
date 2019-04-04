@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.GPSPermissionActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_50">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_20"
+            android:background="@drawable/gps_circle_background" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_70"
+            android:src="@drawable/man" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_gravity="bottom"
+            android:background="@color/black"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_marginRight="@dimen/margin_30"/>
+
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_50"
+        android:layout_below="@id/frame_one">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS turned off"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_heading_two"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title"
+            android:text="@string/gps_txt"
+            android:textColor="@color/simple_white"
+            />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title"
+            android:text="@string/gps_txt_one"
+            android:textColor="@color/simple_white"
+            />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/turnOnGPSBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_50"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginBottom="@dimen/margin_30"
+        android:background="@drawable/next_button_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="TURN ON GPS"
+        android:textAllCaps="false"
+        android:textColor="@color/login_top_color"
+        android:textSize="@dimen/title" />
+
+
+
+</RelativeLayout>
