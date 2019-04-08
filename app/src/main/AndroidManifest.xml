@@ -61,6 +61,8 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
             android:label="Profile" />
         <activity
             android:name=".activities.NavigationActivity"

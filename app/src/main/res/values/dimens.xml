@@ -38,4 +38,5 @@
     <dimen name="circle_margin_10">10sp</dimen>
     <dimen name="nav_profile_padding">5dp</dimen>
     <dimen name="padding_3">3sp</dimen>
+    <dimen name="margin_180">180sp</dimen>
 </resources>

@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.e.c2cjprtechnosoft.R;
 import com.e.c2cjprtechnosoft.fragments.AboutFragment;
@@ -28,6 +30,7 @@ public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView textViewprofile;
     NavigationView navigationView;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,12 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
         navigationView = findViewById(R.id.nav_view);
         View viewHeader = navigationView.inflateHeaderView(R.layout.nav_header_navigation);
-        textViewprofile = viewHeader.findViewById(R.id.myprofile);
-        textViewprofile.setOnClickListener(new View.OnClickListener() {
+        relativeLayout=viewHeader.findViewById(R.id.relative_top);
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                //Toast.makeText(NavigationActivity.this, "Hello", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(NavigationActivity.this, ProfileActivity.class));
-
             }
         });
 

@@ -58,5 +58,12 @@
     <color name="greenmoney">#1c8101</color>
     <color name="redmoney">#ff0000</color>
     <color name="bluemoney">#1c67ad</color>
+    <color name="profile_background_top_color">#b4b200</color>
+    <color name="email_color">#0273ff</color>
+    <color name="gender_background_profile">#3e7c02</color>
+    <color name="birth_background_color">#ff8105</color>
+    <color name="since_background_color">#009e9c</color>
+    <color name="emergency_background_profile">#ff0000</color>
+    <color name="logout_backgroud_color">#580606</color>
 
 </resources>

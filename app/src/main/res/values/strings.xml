@@ -13,7 +13,7 @@
     <string name="verify_txt">We will auto verify the OTP send to</string>
     <string name="opt_txt">Auto verify your</string>
     <string name="opt_txt_two">OTP in ( 00:10 )</string>
-    <string name="allow_location_txt">Have a hassle-free booking experience by given us</string>
+    <string name="allow_location_txt">Have a hassle-free booking experience by giving us</string>
     <string name="location_txt">Location ( for finding available rides )</string>
     <string name="location_phone_txt">Phone ( for account security verification )</string>
     <string name="gps_txt" >All C2C cabe to turn on your phone GPS for</string>
