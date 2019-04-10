@@ -9,13 +9,14 @@
     tools:context=".activities.PhoneNumberSubmitActivity">
 
 
-    <RelativeLayout
+   <RelativeLayout
+       android:layout_marginBottom="300dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:id="@+id/linear_one"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_5">
 
             <ImageView
@@ -108,7 +109,8 @@
         <View
             android:id="@+id/linear_four"
             android:layout_width="match_parent"
-            android:layout_height="1pt"
+            android:layout_height="3px"
+            android:paddingTop="@dimen/padding_5"
             android:layout_below="@id/linear_third"
             android:layout_marginLeft="@dimen/margin_15"
             android:layout_marginRight="@dimen/margin_15"
@@ -124,7 +126,7 @@
             android:layout_height="200dp">
 
         </LinearLayout>
-        <Button
+       <!-- <Button
             android:layout_marginTop="@dimen/margin_30"
             android:id="@+id/next_button"
             android:layout_width="match_parent"
@@ -132,15 +134,32 @@
             android:layout_below="@id/linear_five"
             android:layout_marginLeft="@dimen/margin_25"
             android:layout_marginRight="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_110"
             android:background="@drawable/next_button_background"
             android:text="Next"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/margin_30"
             android:textColor="@color/login_top_color"
             android:textSize="@dimen/title"
             android:textStyle="bold" />
+-->
+       <android.support.v7.widget.AppCompatButton
+           android:layout_below="@id/linear_five"
+           android:id="@+id/next_button"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_marginLeft="@dimen/margin_30"
+           android:layout_marginTop="@dimen/margin_90"
+           android:layout_marginRight="@dimen/margin_30"
+           android:layout_marginBottom="@dimen/margin_70"
+           android:background="@drawable/next_button_background"
+           android:foreground="?attr/selectableItemBackground"
+           android:text="TURN ON GPS"
+           android:textAllCaps="false"
+           android:textColor="@color/login_top_color"
+           android:textSize="@dimen/title" />
 
-    </RelativeLayout>
+   </RelativeLayout>
 
 
 </ScrollView>

@@ -35,8 +35,8 @@ public class GPSPermissionActivity extends AppCompatActivity implements View.OnC
     }
 
     private void turnOnGPS() {
-
         Intent intent = new Intent(GPSPermissionActivity.this, NavigationActivity.class);
         startActivity(intent);
+        finish();
     }
 }

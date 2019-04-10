@@ -88,7 +88,7 @@
                     android:padding="@dimen/padding_5"
                     android:paddingRight="@dimen/padding_10"
                     android:text="@string/login_txt"
-                    android:textColor="@color/black"
+                    android:textColor="@color/black_titles"
                     android:textSize="@dimen/title"
                     android:textStyle="bold" />
 
@@ -108,7 +108,7 @@
                 android:padding="@dimen/padding_5"
                 android:text="Please enter your mobile number to proceed"
                 android:textColor="@color/black"
-                android:textSize="@dimen/sub_title" />
+                android:textSize="@dimen/title" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -161,19 +161,14 @@
                        android:hint="Your Number"
                        android:textStyle="bold"/>
                 </LinearLayout>
-
-
             </LinearLayout>
-
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1pt"
+                android:layout_height="3px"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="@dimen/margin_50"
                 android:background="@color/login_top_color" />
         </LinearLayout>
     </RelativeLayout>
-
-
 </ScrollView>

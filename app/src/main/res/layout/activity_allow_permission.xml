@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_30"
+
         android:background="@color/white">
 
         <FrameLayout
@@ -182,10 +182,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_middle"
             android:layout_alignParentBottom="true"
+
             android:layout_marginLeft="@dimen/margin_30"
-            android:layout_marginTop="@dimen/margin_50"
+            android:layout_marginTop="96dp"
             android:layout_marginRight="@dimen/margin_30"
-            android:layout_marginBottom="@dimen/margin_70"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/next_button_background"
             android:foreground="?attr/selectableItemBackground"
             android:text="Allow"

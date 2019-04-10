@@ -15,7 +15,7 @@
 
 
         <ImageView
-            android:id="@+id/back_arrow"
+            android:id="@+id/back_arrow_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow_icon"
@@ -24,7 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/back_arrow"
+            android:layout_below="@id/back_arrow_profile"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -63,344 +63,326 @@
         android:layout_below="@id/relative_one">
 
         <TextView
-            android:textColor="@color/black_titles"
             android:id="@+id/txt_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_5"
             android:padding="@dimen/padding_5"
             android:text="Profile"
+            android:textColor="@color/black_titles"
             android:textSize="@dimen/title" />
 
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_email"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_profile">
+            android:layout_below="@id/txt_profile"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
 
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/email_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/email_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/email_profile_icon"
                     android:id="@+id/email_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
+                    android:layout_gravity="center"
+                    android:src="@drawable/email_profile_icon" />
 
             </FrameLayout>
 
 
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/simple_white"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Email"
-                    />
+                    android:textColor="@color/simple_white"
+                    android:textSize="@dimen/sub_title" />
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="vinod22450@gmail.com"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_gender"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_email">
+            android:layout_below="@id/txt_email"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
 
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/gender_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/gender_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/gender_profile_icon"
                     android:id="@+id/gender_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
+                    android:layout_gravity="center"
+                    android:src="@drawable/gender_profile_icon" />
 
             </FrameLayout>
-
-
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/simple_white"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Gender"
-                    />
+                    android:textColor="@color/simple_white"
+                    android:textSize="@dimen/sub_title" />
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Male"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_dateofbirth"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_gender">
+            android:layout_below="@id/txt_gender"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
 
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/birth_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/birth_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/date_of_birth_profile_icon"
                     android:id="@+id/birth_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
+                    android:layout_gravity="center"
+                    android:src="@drawable/date_of_birth_profile_icon" />
 
             </FrameLayout>
 
 
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/simple_white"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Date Of Birth"
-                    />
+                    android:textColor="@color/simple_white"
+                    android:textSize="@dimen/sub_title" />
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="01/06/1993"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_member_since"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_dateofbirth">
+            android:layout_below="@id/txt_dateofbirth"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
+
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/member_since_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/member_since_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/member_since_profile_icon"
                     android:id="@+id/member_since_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
+                    android:layout_gravity="center"
+                    android:src="@drawable/member_since_profile_icon" />
 
             </FrameLayout>
 
 
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Member Since"
-                    />
+                    android:textSize="@dimen/sub_title" />
+
                 <TextView
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/sub_title"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="March 2019"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_emergency_contact"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_member_since">
+            android:layout_below="@id/txt_member_since"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
+
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/emergency_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/emergency_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/emergency_profile_icon"
                     android:id="@+id/emergency_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
+                    android:layout_gravity="center"
+                    android:src="@drawable/emergency_profile_icon" />
 
             </FrameLayout>
-
-
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/simple_white"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Emergency Contacts"
-                    />
+                    android:textColor="@color/simple_white"
+                    android:textSize="@dimen/sub_title" />
+
                 <TextView
-                    android:textSize="@dimen/sub_title"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Share rider with trusted contacts"
-                    />
-
-
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
             </LinearLayout>
-
         </LinearLayout>
-
-
-
     </RelativeLayout>
-
     <RelativeLayout
-        android:paddingTop="@dimen/margin_10"
-        android:layout_below="@id/relative_two"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_two"
+        android:paddingTop="@dimen/margin_10">
         <View
-
             android:layout_width="match_parent"
             android:layout_height="2px"
-            android:background="@color/simple_white"/>
-
+            android:background="@color/simple_white" />
         <TextView
-            android:textColor="@color/black_titles"
             android:id="@+id/txt_others"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_5"
             android:padding="@dimen/padding_5"
             android:text="Others"
+            android:textColor="@color/black_titles"
             android:textSize="@dimen/title" />
-
         <LinearLayout
-            android:padding="@dimen/padding_5"
             android:id="@+id/txt_logout"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_others">
+            android:layout_below="@id/txt_others"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
 
             <FrameLayout
-                android:layout_marginLeft="@dimen/margin_20"
-                android:background="@drawable/logout_background_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:background="@drawable/logout_background_profile">
+
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/logout_profile_icon"
                     android:id="@+id/logout_button"
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
-                    />
-
+                    android:layout_gravity="center"
+                    android:src="@drawable/logout_profile_icon" />
             </FrameLayout>
-
-
             <LinearLayout
-                android:layout_marginLeft="@dimen/margin_10"
-                android:padding="@dimen/padding_5"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
                 <TextView
-                    android:textSize="@dimen/title"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Logout"
-                    />
-
-
+                    android:textSize="@dimen/title" />
             </LinearLayout>
-
         </LinearLayout>
     </RelativeLayout>
-
 </RelativeLayout>
 
 

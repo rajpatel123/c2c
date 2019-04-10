@@ -39,6 +39,6 @@ public class AllowPermissionActivity extends AppCompatActivity implements View.O
     private void allowPermission() {
         Intent intent = new Intent(AllowPermissionActivity.this, GPSPermissionActivity.class);
         startActivity(intent);
-        Toast.makeText(this, "Permission Access", Toast.LENGTH_SHORT).show();
+       finish();
     }
 }
