@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     android:background="@color/white"
+    android:scrollbars="none"
     tools:context=".activities.AllowPermissionActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_30"
+
         android:background="@color/white">
 
         <FrameLayout
@@ -25,23 +25,37 @@
                 android:layout_gravity="center"
                 android:src="@drawable/house" />
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_70"
                 android:layout_marginRight="@dimen/margin_110"
-                android:background="@drawable/circle_button_background"
-                android:src="@drawable/locatin" />
+                android:background="@drawable/circle_button_background">
 
-            <ImageView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/locatin" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/margin_110"
                 android:layout_marginTop="@dimen/margin_70"
-                android:background="@drawable/circle_button_background"
-                android:src="@drawable/phone_call" />
+                android:background="@drawable/circle_button_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/phone_call" />
+            </FrameLayout>
+
 
             <ImageView
                 android:layout_width="@dimen/margin_50"
@@ -77,9 +91,9 @@
                 android:layout_gravity="center"
                 android:padding="@dimen/padding_5"
                 android:text="Welcome To C2C"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="@dimen/txt_heading_two" />
+                android:textSize="@dimen/txt_heading_two"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,9 +104,9 @@
                 android:textSize="@dimen/sub_title" />
 
             <TextView
-                android:padding="@dimen/margin_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_5"
                 android:text="the following permission"
                 android:textColor="@color/simple_white" />
 
@@ -168,10 +182,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_middle"
             android:layout_alignParentBottom="true"
+
             android:layout_marginLeft="@dimen/margin_30"
-            android:layout_marginTop="@dimen/margin_50"
+            android:layout_marginTop="96dp"
             android:layout_marginRight="@dimen/margin_30"
-            android:layout_marginBottom="@dimen/margin_70"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/next_button_background"
             android:foreground="?attr/selectableItemBackground"
             android:text="Allow"

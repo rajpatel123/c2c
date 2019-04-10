@@ -6,7 +6,12 @@
         <item name="colorAccent">@color/logintextcolor</item>
     </style>
 
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme_action_bar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/black_primary</item>
+        <item name="colorAccent">@color/logintextcolor</item>
+    </style>
+
+    <style name="AppTheme_no_actionbar_fullscreen" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black_primary</item>
         <item name="android:windowFullscreen">true</item>
@@ -17,20 +22,25 @@
 
 
 
-    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme_no_actionbar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black_primary</item>
         <item name="colorPrimaryDark">@color/logintextcolor</item>
         <item name="colorAccent">@color/logintextcolor</item>
     </style>
+    <style name="AppTheme_nav_toolbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/profile_background_top_color</item>
+        <item name="colorPrimaryDark">@color/black_primary</item>
+        <item name="colorAccent">@color/black_primary</item>
+    </style>
 
-    <style name="AppTheme4" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme1_no_actionbar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black_titles</item>
         <item name="colorPrimaryDark">@color/logintextcolor</item>
         <item name="colorAccent">@color/logintextcolor</item>
     </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

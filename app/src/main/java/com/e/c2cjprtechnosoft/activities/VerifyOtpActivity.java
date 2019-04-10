@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.e.c2cjprtechnosoft.R;
 
@@ -15,12 +16,16 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
     @BindView(R.id.verifyBtn)
     Button verifyButton;
+
+    @BindView(R.id.crossBtn)
+    ImageView crossBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
         ButterKnife.bind(this);
         verifyButton.setOnClickListener(this);
+        crossBtn.setOnClickListener(this);
 
     }
 
@@ -31,12 +36,17 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
             case R.id.verifyBtn:
                 verify();
                 break;
+
+            case R.id.crossBtn:
+                finish();
+                break;
         }
     }
 
     private void verify() {
         Intent intent=new Intent(VerifyOtpActivity.this,AllowPermissionActivity.class);
         startActivity(intent);
+        finish();
 
     }
 }

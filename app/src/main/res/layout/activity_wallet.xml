@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.WalletActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_wallets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+   android:layout_marginTop="@dimen/margin_50"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginLeft="@dimen/margin_20">
+
+        <ImageView
+            android:id="@+id/phone_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_25"
+
+            android:layout_toRightOf="@id/phone_img"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/phone_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingTop="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5"
+                android:text="Phone number"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@id/phone_img"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5"
+                android:text="9045125459"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_wallets"
+        android:layout_marginTop="@dimen/margin_40"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20">
+
+        <ImageView
+            android:id="@+id/balance_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_25"
+
+            android:layout_toRightOf="@id/balance_img"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/balance_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingTop="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5"
+                android:text="Balance"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/phone_img"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5"
+                android:text="0.0"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+
+        android:id="@+id/view_wallets"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/relative_balance"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:background="@color/black" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_wallets"
+        android:layout_centerInParent="true"
+       android:layout_marginTop="@dimen/margin_50"
+        android:background="@drawable/next_button_background"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_50"
+        android:paddingRight="@dimen/margin_50"
+        android:text="Add Money"
+        android:textAllCaps="false"
+        android:textColor="@color/profile_background_top_color"
+        android:textSize="@dimen/margin_20" />
+
+
+</RelativeLayout>
