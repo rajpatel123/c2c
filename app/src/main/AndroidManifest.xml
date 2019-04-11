@@ -17,10 +17,21 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activities.MyRidesActivity"
+        <activity android:name=".activities.FavoriteActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_nav_toolbar"
-            android:label="My Rides"/>
+            android:label="Favorites"
+            android:theme="@style/AppTheme_nav_toolbar"/>
+        <activity android:name=".activities.ChooseLanguageActivity" />
+        <activity
+            android:name=".activities.SettingActivity"
+            android:label="Settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_nav_toolbar" />
+        <activity
+            android:name=".activities.MyRidesActivity"
+            android:label="My Rides"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_nav_toolbar" />
         <activity
             android:name=".activities.NotificationActivity"
             android:label="Notification"
