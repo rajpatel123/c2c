@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rides_color">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linear_top_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="Base Fare"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="15.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_one"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/linear_top_help"
+            android:background="@color/rides_color" />
+
+        <LinearLayout
+
+            android:id="@+id/linear_top_help_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_one"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="Distance Fare"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="15.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <View
+
+            android:id="@+id/view_two"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/linear_top_help_two"
+            android:background="@color/rides_color" />
+        <LinearLayout
+
+            android:id="@+id/linear_top_help_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_two"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="Ride Time Fare"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="15.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <View
+
+            android:id="@+id/view_three"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/linear_top_help_three"
+            android:background="@color/rides_color" />
+
+        <LinearLayout
+
+            android:id="@+id/linear_top_help_four"
+            android:layout_width="407dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_three"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="Discount/Offers"
+                android:textColor="@color/greenmoney"
+                android:textSize="@dimen/title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="15.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <View
+
+            android:id="@+id/view_four"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/linear_top_help_four"
+            android:background="@color/rides_color" />
+        <LinearLayout
+
+            android:id="@+id/linear_top_help_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_four"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_5"
+                    android:text="15.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
