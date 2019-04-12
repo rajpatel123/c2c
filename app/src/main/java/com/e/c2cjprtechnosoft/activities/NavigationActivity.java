@@ -127,6 +127,9 @@ public class NavigationActivity extends AppCompatActivity
 
         } else if (id == R.id.helps) {
 
+            Intent intent=new Intent(NavigationActivity.this,RideDetailsActivity.class);
+            startActivity(intent);
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -36,6 +36,7 @@
     <color name="skyblue">#FF393FF2</color>
     <color name="darkwhite">#ababae</color>
     <color name="vediobackgroundColor">#e6e7e9</color>
+    <color name="rides_color">#E9E9F0</color>
     <color name="home">#f6ece9</color>
     <color name="homebackground">#EAEDF2</color>
     <color name="vediobackground">#fef1eb</color>

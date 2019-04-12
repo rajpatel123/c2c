@@ -79,7 +79,7 @@
 
         <LinearLayout
             android:layout_marginTop="@dimen/margin_10"
-            android:id="@+id/txt_Favorites"
+            android:id="@+id/linear_Favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_profile_settings"
@@ -134,7 +134,7 @@
             android:id="@+id/txt_preferences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_Favorites"
+            android:layout_below="@id/linear_Favorites"
             android:orientation="horizontal"
             android:padding="@dimen/padding_5">
 
@@ -149,7 +149,8 @@
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
                     android:layout_gravity="center"
-                    android:src="@drawable/date_of_birth_profile_icon" />
+                    android:tint="@color/white"
+                    android:src="@drawable/preferences_settings_icon" />
 
             </FrameLayout>
 

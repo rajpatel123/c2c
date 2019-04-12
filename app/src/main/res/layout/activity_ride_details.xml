@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RideDetailsActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_one_ride_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_30">
+
+        <LinearLayout
+            android:id="@+id/linear_one_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_date_ride_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="05/06/1994"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title" />
+
+            <TextView
+                android:id="@+id/txt_time_ride_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:padding="@dimen/padding_5"
+                android:text="4:56 PM"
+                android:textColor="@color/simple_white"
+                android:textSize="@dimen/title" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/txt_profile_profile_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_one_rating"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/app_language_background_settings"
+                android:src="@drawable/profile_image"
+                android:tint="@color/white" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="@dimen/padding_3"
+                    android:text="Aakash Kumar"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_rated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="You Rated"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sub_title" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:drawableLeft="@drawable/star_favorites_setings"
+                        android:drawableTint="@color/black"
+                        android:text=""
+                        android:textColor="@color/simple_white"
+                        android:textSize="@dimen/sub_title" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_rate_ride_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_profile_profile_details"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/txt_date_ride_fare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_5"
+                    android:text="Ride Fare"
+                    android:textColor="@color/simple_white"
+                    android:textSize="@dimen/title" />
+
+                <TextView
+                    android:id="@+id/txt_time_ride_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:padding="@dimen/padding_5"
+                    android:text="0.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/txt_date_ride_km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_5"
+                    android:text="0 km"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+                <TextView
+                    android:id="@+id/txt_time_ride_mins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:padding="@dimen/padding_5"
+                    android:text="0.0 mins"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_rides_detail"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/linear_rate_ride_details"
+            android:background="@color/simple_white"
+            android:padding="@dimen/padding_5" />
+
+        <LinearLayout
+            android:id="@+id/linear_myrides_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_rides_detail"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/circle_first"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_background_myrides_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="@dimen/padding_5"
+                    android:text="C3 Block C,Sector 12, Noida,Uttar Pradesh 20131,india"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="2px"
+                    android:layout_height="@dimen/margin_20"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:background="@color/black_titles" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/circle_second"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_background_myrides_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="@dimen/padding_5"
+                    android:text="C3 Block C,Sector 12, Noida,Uttar Pradesh 20131,india"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@color/rides_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_one_ride_details">
+
+        <LinearLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/rides_color"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/black"
+                app:tabIndicatorHeight="1sp"
+                app:tabMode="scrollable" />
+            <!-- </android.support.design.widget.AppBarLayout>-->
+            <View
+                android:id="@+id/tabBarShadow"
+                android:layout_width="match_parent"
+                android:layout_height="4px"
+                android:background="@color/rides_color" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tablayout">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

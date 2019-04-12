@@ -37,7 +37,7 @@
 
     <style name="AppTheme1_no_actionbar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/black_titles</item>
+        <item name="colorPrimary">@color/profile_background_top_color</item>
         <item name="colorPrimaryDark">@color/logintextcolor</item>
         <item name="colorAccent">@color/logintextcolor</item>
     </style>
