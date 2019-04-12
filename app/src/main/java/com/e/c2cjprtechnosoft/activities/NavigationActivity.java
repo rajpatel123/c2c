@@ -108,8 +108,8 @@ public class NavigationActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.your_rider) {
-          Intent intent=new Intent(NavigationActivity.this,MyRidesActivity.class);
-          startActivity(intent);
+            Intent intent = new Intent(NavigationActivity.this, MyRidesActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.free_rider) {
             getSupportFragmentManager().beginTransaction()
@@ -122,12 +122,8 @@ public class NavigationActivity extends AppCompatActivity
 
         } else if (id == R.id.settings) {
 
-            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-            sharingIntent.setType("text/plain");
-            String shareBody = "Here is the share content body";
-            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            Intent intent = new Intent(NavigationActivity.this, SettingActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.helps) {
 
