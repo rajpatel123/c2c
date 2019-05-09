@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PaymentActivity">
+    tools:context=".Activities.PaymentActivity">
 
     <LinearLayout
         android:id="@+id/linear_top"
@@ -25,7 +25,8 @@
         android:id="@+id/relative_wallet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear_top">
+        android:layout_below="@id/linear_top"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/linear_wallet"
@@ -43,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/logout_profile_icon" />
+                    android:src="@drawable/wallet_payment" />
             </FrameLayout>
 
             <TextView
@@ -68,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margin_15"
-                android:text="0.0"
+                android:text="@string/Rs_one"
                 android:textSize="@dimen/title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -97,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/logout_profile_icon" />
+                    android:src="@drawable/pytm" />
             </FrameLayout>
 
             <TextView
@@ -133,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margin_15"
-                android:text="0.0"
+                android:text="@string/Rs_one"
                 android:textSize="@dimen/title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -144,7 +145,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/relative_paytm"
-        android:layout_marginTop="@dimen/margin_15">
+        android:layout_marginTop="@dimen/margin_15"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/linear_free"
@@ -162,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/logout_profile_icon" />
+                    android:src="@drawable/freercharg" />
             </FrameLayout>
 
             <TextView
@@ -225,10 +227,11 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/margin_15"
+            android:id="@+id/linear_cash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/others_txt">
+            android:layout_below="@id/others_txt"
+            android:layout_marginTop="@dimen/margin_15">
 
             <FrameLayout
                 android:id="@+id/frame_other"
@@ -238,11 +241,19 @@
                 android:layout_marginTop="@dimen/padding_10"
                 android:background="@drawable/cash_background_payment">
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/logout_profile_icon" />
+                    android:text="@string/Rs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_heading_two" />
+                <!--<ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tex5
+                    android:src="@drawable/logout_profile_icon" />-->
             </FrameLayout>
 
             <TextView

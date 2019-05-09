@@ -19,6 +19,7 @@
     <string name="gps_txt">All C2C cabe to turn on your phone GPS for</string>
     <string name="gps_txt_one">accurate pickup</string>
     <string name="nav_profile_progress_txt">Complete your Profile( 35% )</string>
-
+    <string name="Rs">\u20B9</string>
+    <string name="Rs_one">"\u20B9" 15.0</string>
 
 </resources>

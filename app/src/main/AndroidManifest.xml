@@ -19,67 +19,67 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activities.RideDetailsActivity"
+        <activity android:name=".Activities.RideDetailsActivity"
             android:screenOrientation="portrait"
             android:label="Ride Details"
             android:theme="@style/AppTheme_nav_toolbar"/>
         <activity
-            android:name=".activities.FavoriteActivity"
+            android:name=".Activities.FavoriteActivity"
             android:label="Favorites"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
-        <activity android:name=".activities.ChooseLanguageActivity" />
+        <activity android:name=".Activities.ChooseLanguageActivity" />
         <activity
-            android:name=".activities.SettingActivity"
+            android:name=".Activities.SettingActivity"
             android:label="Settings"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".activities.MyRidesActivity"
+            android:name=".Activities.MyRidesActivity"
             android:label="My Rides"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".activities.NotificationActivity"
+            android:name=".Activities.NotificationActivity"
             android:label="Notification"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".activities.WalletActivity"
+            android:name=".Activities.WalletActivity"
             android:label="Wallet"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".activities.PaymentActivity"
+            android:name=".Activities.PaymentActivity"
             android:label="Payment"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".activities.GPSPermissionActivity"
+            android:name=".Activities.GPSPermissionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.AllowPermissionActivity"
+            android:name=".Activities.AllowPermissionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.VerifyOtpActivity"
+            android:name=".Activities.VerifyOtpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.PhoneNumberSubmitActivity"
+            android:name=".Activities.PhoneNumberSubmitActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.PhoneLoginActivity"
+            android:name=".Activities.PhoneLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.DropSearchActivity"
+            android:name=".Activities.DropSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.PickupSearchActivity"
+            android:name=".Activities.PickupSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <!--
@@ -95,28 +95,24 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activities.MapsActivity"
+            android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".activities.ProfileActivity"
+            android:name=".Activities.ProfileActivity"
             android:label="Profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activities.NavigationActivity"
+            android:name=".Activities.NavigationActivity"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1_no_actionbar" />
         <activity
-            android:name=".activities.SignupActivity"
+            android:name=".Activities.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_action_bar" />
         <activity
-            android:name=".activities.LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_no_actionbar_fullscreen" />
-        <activity
-            android:name=".activities.SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar_fullscreen">
             <intent-filter>

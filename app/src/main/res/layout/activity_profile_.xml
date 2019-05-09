@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.ProfileActivity">
+    tools:context=".Activities.ProfileActivity">
 
     <RelativeLayout
         android:id="@+id/relative_one"
@@ -42,9 +42,7 @@
                 android:text="Vinod Chaudhary"
                 android:textColor="@color/black_titles"
                 android:textSize="@dimen/title" />
-
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+91-9876543210"
@@ -177,6 +175,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/txt_dateofbirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
