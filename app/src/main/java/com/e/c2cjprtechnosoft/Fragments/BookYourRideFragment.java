@@ -141,7 +141,6 @@ public class BookYourRideFragment extends Fragment implements
             }
         });
 
-
         return view;
     }
 
@@ -225,10 +224,6 @@ public class BookYourRideFragment extends Fragment implements
         mMap.setMapStyle(mapStyleOptions);
 
     }
-
-
-
-
 
     @Override
     public void onMapLoaded() {

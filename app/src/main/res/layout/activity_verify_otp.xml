@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activities.VerifyOtpActivity">
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -47,51 +46,47 @@
         android:textColor="@color/black"
         android:textSize="@dimen/title" />
 
-   <!-- <com.alimuzaffar.lib.pin.PinEntryEditText
-        android:id="@+id/otp_pin"
-        android:layout_width="140dp"
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textview_mobile"
-        android:layout_marginLeft="@dimen/margin_20"
-        android:layout_marginTop="@dimen/margin_25"
-        android:cursorVisible="true"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:maxLength="4"
-        android:textIsSelectable="false"
-        app:pinAnimationType="popIn"
-        app:pinBackgroundIsSquare="true"
-        app:pinCharacterSpacing="@dimen/spacing_12"
-        app:pinLineColors="@color/black_disabled"
-        app:pinLineStroke="2dp"
-        app:pinLineStrokeSelected="2dp"
-        app:pinTextBottomPadding="4dp"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/verify_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_50"
+            android:hint="Enter Otp"
+            android:maxLength="6" />
 
-        />-->
+        <TextView
+            android:id="@+id/otp_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:gravity="center"
+            android:padding="@dimen/padding_5"
+            android:text="@string/opt_txt"
+            android:textColor="@color/darkwhite"
+            android:textSize="@dimen/title" />
 
-    <TextView
-        android:id="@+id/otp_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textview_mobile"
-        android:layout_marginLeft="@dimen/margin_20"
-        android:paddingLeft="@dimen/padding_5"
-        android:paddingTop="@dimen/padding_5"
-        android:paddingRight="@dimen/padding_5"
-        android:text="@string/opt_txt"
-        android:textColor="@color/darkwhite"
-        android:textSize="@dimen/title" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/otp_txt"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:paddingLeft="@dimen/padding_5"
+            android:text="@string/opt_txt_two"
+            android:textColor="@color/darkwhite"
+            android:textSize="@dimen/title" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/otp_txt"
-        android:layout_marginLeft="@dimen/margin_20"
-        android:paddingLeft="@dimen/padding_5"
-        android:text="@string/opt_txt_two"
-        android:textColor="@color/darkwhite"
-        android:textSize="@dimen/title" />
+    </LinearLayout>
 
 
     <android.support.v7.widget.AppCompatButton
