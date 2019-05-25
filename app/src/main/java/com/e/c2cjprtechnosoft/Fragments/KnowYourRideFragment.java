@@ -1,4 +1,4 @@
-package com.e.c2cjprtechnosoft.Fragments;
+package com.e.c2cjprtechnosoft.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

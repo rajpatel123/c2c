@@ -1,4 +1,4 @@
-package com.e.c2cjprtechnosoft.Activities;
+package com.e.c2cjprtechnosoft.activitis;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

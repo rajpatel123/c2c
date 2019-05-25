@@ -16,8 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.e.c2cjprtechnosoft.R;
-import com.e.c2cjprtechnosoft.Fragments.BookYourRideFragment;
-import com.e.c2cjprtechnosoft.Fragments.KnowYourRideFragment;
+import com.e.c2cjprtechnosoft.fragments.BookYourRideFragment;
+import com.e.c2cjprtechnosoft.activitis.MyRidesActivity;
+import com.e.c2cjprtechnosoft.activitis.NotificationActivity;
+import com.e.c2cjprtechnosoft.activitis.PaymentActivity;
+import com.e.c2cjprtechnosoft.activitis.ProfileActivity;
+import com.e.c2cjprtechnosoft.activitis.SettingActivity;
+import com.e.c2cjprtechnosoft.fragments.KnowYourRideFragment;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
