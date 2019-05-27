@@ -105,7 +105,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".activitis.NavigationActivity"
+            android:name=".activitis.SplashActivity"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1_no_actionbar" />
@@ -113,16 +113,14 @@
             android:name=".activitis.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_action_bar" />
-        <activity
-            android:name=".activitis.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_no_actionbar_fullscreen">
+        <activity android:name=".activitis.MainActivity">
+
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
     <uses-feature
