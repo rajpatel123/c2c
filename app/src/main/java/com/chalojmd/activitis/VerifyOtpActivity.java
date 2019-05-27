@@ -41,6 +41,7 @@ import retrofit2.Response;
 
 
 public class VerifyOtpActivity extends AppCompatActivity {
+
     @BindView(R.id.crossBtn)
     AppCompatImageView crossBtn;
 
@@ -49,8 +50,10 @@ public class VerifyOtpActivity extends AppCompatActivity {
 
     @BindView(R.id.textview_mobile)
     TextView textview_mobile;
+
     @BindView(R.id.pin_layout)
     PinEntryEditText pinLayout;
+
     @BindView(R.id.resendOtp)
     TextView resendOtp;
 
