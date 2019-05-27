@@ -30,6 +30,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.phone_number:
                 startActivity(new Intent(PhoneLoginActivity.this, PhoneNumberSubmitActivity.class));
+                finish();
                 break;
 
         }

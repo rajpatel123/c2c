@@ -21,6 +21,7 @@ import com.chalojmd.model.udateUser.UpdateUserResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,14 +29,13 @@ import retrofit2.Response;
 public class UpdateUserActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.email)
+    @BindView(R.id.email_id)
     EditText editTextEmail;
 
     @BindView(R.id.name)
     EditText editTextUsername;
 
-
-    @BindView(R.id.updateDetails)
+    @BindView(R.id.updatedetails)
     Button btnUpdate;
 
     String email, name, phone;
@@ -47,8 +47,8 @@ public class UpdateUserActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        if (getIntent().hasExtra("mobile")){
-            phone=getIntent().getStringExtra("mobile");
+        if (getIntent().hasExtra("mobile")) {
+            phone = getIntent().getStringExtra("mobile");
         }
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,9 +95,9 @@ public class UpdateUserActivity extends AppCompatActivity {
                 public void onResponse(Call<UpdateUserResponse> call, Response<UpdateUserResponse> response) {
                     if (response.body() != null) {
                         Utils.dismissProgressDialog();
-                        C2CPref.putString(UpdateUserActivity.this, Constants.NAME,response.body().getUsername());
-                        C2CPref.putString(UpdateUserActivity.this, Constants.EMAILID,response.body().getEmail());
-                        C2CPref.putBoolean(UpdateUserActivity.this, Constants.IS_LOOGED_IN,true);
+                        C2CPref.putString(UpdateUserActivity.this, Constants.NAME, response.body().getUsername());
+                        C2CPref.putString(UpdateUserActivity.this, Constants.EMAILID, response.body().getEmail());
+                        C2CPref.putBoolean(UpdateUserActivity.this, Constants.IS_LOOGED_IN, true);
                         Intent intent = new Intent(UpdateUserActivity.this, NavigationActivity.class);
                         startActivity(intent);
                         finish();
@@ -107,7 +107,7 @@ public class UpdateUserActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<UpdateUserResponse> call, Throwable t) {
-                    Toast.makeText(UpdateUserActivity.this, "Something went wrong, lease try again!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUserActivity.this, "Something went wrong,Please try again!", Toast.LENGTH_SHORT).show();
                     Utils.dismissProgressDialog();
                 }
             });

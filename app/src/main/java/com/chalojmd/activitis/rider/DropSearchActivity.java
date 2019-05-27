@@ -58,6 +58,7 @@ public class DropSearchActivity extends FragmentActivity implements OnMapReadyCa
                     Address address = addressList.get(0);
                     try {
                         LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+
                         gMap.addMarker(new MarkerOptions().position(latLng).title(location));
                         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                     } catch (Exception e) {

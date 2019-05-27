@@ -76,7 +76,7 @@
             android:name=".activitis.PhoneLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
-        <activity
+       <activity
             android:name=".activitis.rider.DropSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
