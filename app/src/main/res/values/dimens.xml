@@ -8,7 +8,7 @@
     <dimen name="title">18sp</dimen>
     <dimen name="sub_title">14sp</dimen>
     <dimen name="normal_txt">12sp</dimen>
-    <dimen name="frame_height">400sp</dimen>
+    <dimen name="frame_height">300sp</dimen>
     <dimen name="margin_fifteen">15sp</dimen>
     <dimen name="padding_ten">10sp</dimen>
     <dimen name="padding_five">5sp</dimen>
@@ -39,4 +39,5 @@
     <dimen name="nav_profile_padding">5dp</dimen>
     <dimen name="padding_3">3sp</dimen>
     <dimen name="margin_180">180sp</dimen>
+    <dimen name="txt_medium">14sp</dimen>
 </resources>
