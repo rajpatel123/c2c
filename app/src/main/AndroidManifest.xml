@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.e.c2cjprtechnosoft">
+    package="com.chalojmd">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -21,67 +21,67 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".activitis.UpdateUserActivity"></activity>
         <activity
-            android:name=".Activities.RideDetailsActivity"
+            android:name=".activitis.rider.RideDetailsActivity"
             android:label="Ride Details"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.FavoriteActivity"
+            android:name=".activitis.rider.FavoriteActivity"
             android:label="Favorites"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
-        <activity android:name=".Activities.ChooseLanguageActivity" />
+        <activity android:name=".activitis.ChooseLanguageActivity" />
         <activity
-            android:name=".Activities.SettingActivity"
+            android:name=".activitis.SettingActivity"
             android:label="Settings"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.MyRidesActivity"
+            android:name=".activitis.rider.MyRidesActivity"
             android:label="My Rides"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.NotificationActivity"
+            android:name=".activitis.NotificationActivity"
             android:label="Notification"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.WalletActivity"
+            android:name=".activitis.WalletActivity"
             android:label="Wallet"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.PaymentActivity"
+            android:name=".activitis.PaymentActivity"
             android:label="Payment"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
         <activity
-            android:name=".Activities.GPSPermissionActivity"
+            android:name=".activitis.GPSPermissionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.AllowPermissionActivity"
+            android:name=".activitis.AllowPermissionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.VerifyOtpActivity"
+            android:name=".activitis.VerifyOtpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.PhoneNumberSubmitActivity"
+            android:name=".activitis.PhoneNumberSubmitActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.PhoneLoginActivity"
+            android:name=".activitis.PhoneLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.DropSearchActivity"
+            android:name=".activitis.rider.DropSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.PickupSearchActivity"
+            android:name=".activitis.PickupSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <!--
@@ -97,24 +97,24 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Activities.MapsActivity"
+            android:name=".activitis.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".Activities.ProfileActivity"
+            android:name=".activitis.ProfileActivity"
             android:label="Profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
         <activity
-            android:name=".Activities.NavigationActivity"
+            android:name=".activitis.NavigationActivity"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1_no_actionbar" />
         <activity
-            android:name=".Activities.SignupActivity"
+            android:name=".activitis.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_action_bar" />
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name=".activitis.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar_fullscreen">
             <intent-filter>
@@ -125,5 +125,7 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 </manifest>

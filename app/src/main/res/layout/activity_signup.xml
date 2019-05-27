@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.SignupActivity">
+    tools:context=".activitis.SignupActivity">
 
     <LinearLayout
 
