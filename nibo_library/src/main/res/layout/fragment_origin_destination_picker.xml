@@ -141,8 +141,7 @@
         android:orientation="vertical"
         app:anchorPoint="@dimen/anchor_point"
         app:behavior_hideable="true"
-        app:behavior_peekHeight="@dimen/bottom_sheet_peek_height"
-        app:layout_behavior="@string/BottomSheetBehaviorGoogleMapsLike">
+        app:behavior_peekHeight="@dimen/bottom_sheet_peek_height">
 
         <include
             layout="@layout/suggestion_list_layout"
