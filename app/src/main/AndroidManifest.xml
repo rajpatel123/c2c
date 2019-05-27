@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chalojmd">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -12,6 +13,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -19,7 +24,12 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activitis.UpdateUserActivity"></activity>
+        <service
+            android:name=".services.C2cFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".activitis.UpdateUserActivity" />
         <activity
             android:name=".activitis.rider.RideDetailsActivity"
             android:label="Ride Details"
@@ -30,6 +40,15 @@
             android:label="Favorites"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
+
+        <service
+            android:name=".services.C2cFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".activitis.ChooseLanguageActivity" />
         <activity
             android:name=".activitis.SettingActivity"
@@ -123,7 +142,5 @@
 
         </activity>
     </application>
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true"/>
+
 </manifest>
