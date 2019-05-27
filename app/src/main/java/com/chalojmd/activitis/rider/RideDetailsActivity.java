@@ -1,4 +1,4 @@
-package com.e.c2cjprtechnosoft.Activities;
+package com.chalojmd.activitis.rider;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,9 +11,9 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.e.c2cjprtechnosoft.R;
-import com.e.c2cjprtechnosoft.Fragments.HelpRidesFragment;
-import com.e.c2cjprtechnosoft.Fragments.InvoiceRidesFragment;
+import com.chalojmd.R;
+import com.chalojmd.fragments.HelpRidesFragment;
+import com.chalojmd.fragments.InvoiceRidesFragment;
 
 import java.util.ArrayList;
 import java.util.List;

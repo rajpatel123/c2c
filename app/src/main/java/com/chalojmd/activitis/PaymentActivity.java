@@ -1,36 +1,40 @@
-package com.e.c2cjprtechnosoft.activitis;
+package com.chalojmd.activitis;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
-import com.e.c2cjprtechnosoft.Activities.RideDetailsActivity;
-import com.e.c2cjprtechnosoft.R;
+import com.chalojmd.R;
 
-public class MyRidesActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
+public class PaymentActivity extends AppCompatActivity {
 
-    private CardView cardView;
+    @BindView(R.id.linear_cash)
+    LinearLayout linearLayoutCash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_rides);
-        cardView=findViewById(R.id.card_view);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MyRidesActivity.this, RideDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_payment);
+        ButterKnife.bind(this);
+
         if (getSupportActionBar() != null){
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        linearLayoutCash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(PaymentActivity.this,WalletActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -1,4 +1,4 @@
-package com.e.c2cjprtechnosoft.Activities;
+package com.chalojmd.activitis.rider;
 
 import android.location.Address;
 import android.location.Geocoder;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.e.c2cjprtechnosoft.R;
+import com.chalojmd.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
