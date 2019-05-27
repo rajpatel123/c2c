@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbars="none"
-    tools:context=".Activities.PhoneLoginActivity">
+    tools:context=".activitis.PhoneLoginActivity">
 
     <RelativeLayout
         android:layout_marginBottom="@dimen/margin_30"
@@ -27,8 +27,8 @@
 
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/image_logo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="@dimen/margin_20"
                     android:src="@drawable/logo" />
 
@@ -39,13 +39,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingLeft="@dimen/padding_ten"
-                    android:paddingTop="@dimen/padding_five"
                     android:paddingRight="@dimen/padding_ten"
                     android:paddingBottom="@dimen/padding_five"
                     android:text="Welcome C2C"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/txt_heading"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/sub_title"
+                    />
            <!-- </RelativeLayout>-->
 
             <ImageView
@@ -71,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/frame_one"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/margin_50"
+            android:layout_marginTop="@dimen/margin_30"
             android:gravity="bottom"
             android:orientation="vertical">
 
@@ -86,11 +85,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_5"
-                    android:paddingRight="@dimen/padding_10"
+                    android:lines="1"
                     android:text="@string/login_txt"
                     android:textColor="@color/black_titles"
                     android:textSize="@dimen/title"
-                    android:textStyle="bold" />
+                     />
 
                 <ImageView
                     android:layout_gravity="center"

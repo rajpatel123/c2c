@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    tools:context=".activitis.PhoneLoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_30">
+
+        <FrameLayout
+            android:id="@+id/frame_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/frame_height"
+            android:background="@drawable/login_gradient_background">
+
+            <!--    <RelativeLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">-->
+
+            <ImageView
+
+                android:id="@+id/image_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_logo"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_110"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:paddingBottom="@dimen/padding_five"
+                android:text="Welcome C2C"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_title" />
+            <!-- </RelativeLayout>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/building_height"
+                android:layout_gravity="bottom"
+                android:baselineAlignBottom="true"
+                android:src="@drawable/bilding" />
+
+            <ImageView
+
+                android:layout_width="330dp"
+                android:layout_height="@dimen/map_height"
+                android:layout_gravity="end|bottom"
+                android:layout_marginTop="@dimen/margin_25"
+                android:src="@drawable/map_one" />
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frame_one"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/margin_30"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Provide your details for better identification and communicatio"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+
+                android:orientation="horizontal">
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:orientation="horizontal" />
+
+                <LinearLayout
+
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Enter name"
+                        android:textSize="@dimen/sub_title"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/login_top_color" />
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Enter email"
+                        android:layout_marginTop="15dp"
+                        android:textSize="@dimen/sub_title"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3px"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="@dimen/margin_50"
+                        android:background="@color/login_top_color" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/updateDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/next_button_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="UPDATE"
+        android:textAllCaps="false"
+        android:textColor="@color/login_top_color"
+        android:textSize="@dimen/title" />
+</RelativeLayout>

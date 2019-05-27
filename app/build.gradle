@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.e.c2cjprtechnosoft"
-        minSdkVersion 16
+        applicationId "com.chalojmd"
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -20,17 +21,22 @@ android {
         debug {
             minifyEnabled false
             multiDexEnabled true
-            buildConfigField "String", "API_SERVER_IP", "\"http://13.234.161.7/\""
+            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.101:8080\""
+            //buildConfigField "String", "API_SERVER_IP", "\"http://13.126.93.95:8080\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 
 
 }
 
 dependencies {
     implementation project(':nibo_library')
+    implementation project(':pinentryedittext')
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -38,7 +44,7 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-
+    implementation 'com.google.firebase:firebase-core:16.0.9'
     implementation 'com.google.android.gms:play-services-location:15.0.1'
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -57,12 +63,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     implementation 'com.google.firebase:firebase-messaging:18.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
-    implementation('com.alimuzaffar.lib:pinentryedittext:1.3.10') {
-        // Exclude is only needed if you already have
-        // any of the following as a dependency in your project.
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'appcompat-v7'
-        exclude group: 'com.android.support', module: 'support-v13'
-    }
 
 }
+apply plugin: 'com.google.gms.google-services'
