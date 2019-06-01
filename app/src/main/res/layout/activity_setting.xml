@@ -11,7 +11,8 @@
         android:id="@+id/relative_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/relative_one">
+        android:layout_below="@id/relative_one"
+        tools:ignore="NotSibling">
 
         <TextView
             android:id="@+id/txt_general"
@@ -204,7 +205,7 @@
                     android:layout_width="@dimen/margin_25"
                     android:layout_height="@dimen/margin_25"
                     android:layout_gravity="center"
-                    android:src="@drawable/language_setting_icon" />
+                   />
 
             </FrameLayout>
 

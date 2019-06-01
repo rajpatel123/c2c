@@ -44,9 +44,9 @@
 
     <ListView
         android:id="@+id/listview"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/search_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_view"
+        android:layout_marginTop="-104dp" />
 
 </RelativeLayout>
