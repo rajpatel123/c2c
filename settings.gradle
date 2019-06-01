@@ -1,1 +1,1 @@
-include ':app', ':nibo_library', ':pinentryedittext'
+include ':app', ':pinentryedittext'
