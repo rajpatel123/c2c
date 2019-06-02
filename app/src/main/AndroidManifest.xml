@@ -23,6 +23,7 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
@@ -42,7 +43,6 @@
             android:label="Favorites"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
-
 
 
         <activity android:name=".activitis.ChooseLanguageActivity" />
@@ -110,7 +110,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
 
-       <activity android:name=".activitis.SplashActivity">
+       <activity android:name=".activitis.SplashActivity"
+           android:screenOrientation="portrait">
+
 
 
            <intent-filter>
@@ -119,7 +121,8 @@
                <category android:name="android.intent.category.LAUNCHER" />
            </intent-filter>
        </activity>
-
+        <activity android:name=".activitis.NavigationActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activitis.SignupActivity"
             android:screenOrientation="portrait"

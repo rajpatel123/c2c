@@ -145,61 +145,28 @@ public class BookYourRideFragment extends Fragment implements
             mMap.setMyLocationEnabled(true);
         }
 
-      /*  mMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveStartedListener() {
-            @Override
-            public void onCameraMoveStarted(int i) {
-                dropLocation.setVisibility(View.VISIBLE);
-                pickupLocation.setVisibility(View.VISIBLE);
-                Log.d("START", "Camera Move start");
-            }
-        });*/
-        mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
-            @Override
-            public void onCameraMove() {
-                dropLocation.setVisibility(View.GONE);
-                pickupLocation.setVisibility(View.GONE);
-                linearLayout.setVisibility(View.GONE);
-                Log.d("GONE", "Camera Move On");
-            }
-        });
-        mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
-            @Override
-            public void onCameraChange(CameraPosition cameraPosition) {
-                dropLocation.setVisibility(View.VISIBLE);
-                pickupLocation.setVisibility(View.VISIBLE);
-                linearLayout.setVisibility(View.VISIBLE);
-                Log.d("VISIBLE", "Camera Changes");
-            }
-        });
-
+        setMapUISettings();
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        // googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        // googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        // googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-        // googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+
         LatLng noida = new LatLng(28.595728, 77.339391);
         mMap.addMarker(new MarkerOptions().position(noida).title("Noida"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(noida, 10.0F));
-      //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(noida, 15), 3000, null);
 
-        //mMap.setMinZoomPreference(5f);
-        //   HARIPAD.distanceTo(MALIVAKA);
-       // mMap.getUiSettings().setZoomGesturesEnabled(true);
-       // mMap.getUiSettings().setRotateGesturesEnabled(true);
-
-        googleMap.setTrafficEnabled(true);
-
-        // Enable / Disable zooming controls
-       // mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
-       // mMap.getUiSettings().setCompassEnabled(true);
-        //mMap.getUiSettings().setZoomControlsEnabled(true);
-        //mMap.getUiSettings().setZoomGesturesEnabled(true);
-        mMap.getUiSettings().setRotateGesturesEnabled(true);
-        MapStyleOptions mapStyleOptions = MapStyleOptions.loadRawResourceStyle(getActivity(), R.raw.google_map_style);
-        mMap.setMapStyle(mapStyleOptions);
+        mMap.getUiSettings().setRotateGesturesEnabled(false);
+        //MapStyleOptions mapStyleOptions = MapStyleOptions.loadRawResourceStyle(getActivity(), R.raw.google_map_style);
+        //mMap.setMapStyle(mapStyleOptions);
 
+    }
+
+    private void setMapUISettings() {
+        if (mMap!=null){
+            mMap.setMaxZoomPreference(18);
+            mMap.setMinZoomPreference(8);
+            mMap.setTrafficEnabled(true);
+
+        }
     }
 
     @Override
