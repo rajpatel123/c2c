@@ -13,6 +13,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.transition.TransitionManager;
@@ -263,7 +264,7 @@ public class NiboOriginDestinationPickerFragment extends BaseNiboFragment<Origin
             }
         });
 
-        //((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+
 
 
         /**
@@ -271,7 +272,7 @@ public class NiboOriginDestinationPickerFragment extends BaseNiboFragment<Origin
          */
         View bottomSheet = mCoordinatorlayout.findViewById(R.id.bottom_sheet);
 
-        mBehavior = BottomSheetBehaviorGoogleMapsLike.from(bottomSheet);
+       mBehavior = BottomSheetBehaviorGoogleMapsLike.from(bottomSheet);
         mBehavior.addBottomSheetCallback(new BottomSheetBehaviorGoogleMapsLike.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {

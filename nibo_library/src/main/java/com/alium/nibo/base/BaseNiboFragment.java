@@ -84,9 +84,7 @@ import java.util.Date;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 
-/**
- * Created by abdulmujibaliu on 9/7/17.
- */
+
 
 public abstract class BaseNiboFragment<T extends NiboPresentable> extends Fragment implements NiboViewable<T>, OnMapReadyCallback, GoogleMap.OnMarkerDragListener {
 
@@ -165,6 +163,7 @@ public abstract class BaseNiboFragment<T extends NiboPresentable> extends Fragme
     @Override
     public View onCreateView(@android.support.annotation.NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
+
         //noinspection unchecked
         injectDependencies();
 
