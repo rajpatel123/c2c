@@ -105,6 +105,9 @@
             android:name=".activitis.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
+            android:name=".googlemap.GoogleAutoCompleteActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
             android:name=".activitis.ProfileActivity"
             android:label="Profile"
             android:screenOrientation="portrait"

@@ -2,6 +2,7 @@ package com.chalojmd.activitis;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,12 +26,15 @@ public class NavigationActivity extends AppCompatActivity
     private TextView textViewprofile;
     NavigationView navigationView;
     private RelativeLayout relativeLayout;
+    public  Toolbar toolbar;
+    private BookYourRideFragment bookridesFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
         View viewHeader = navigationView.inflateHeaderView(R.layout.nav_header_navigation);
         relativeLayout = viewHeader.findViewById(R.id.relative_top);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +62,8 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        replaceFragment(new BookYourRideFragment());
+       bookridesFragment= new BookYourRideFragment();
+        replaceFragment(bookridesFragment);
 
 
     }
@@ -142,5 +147,15 @@ public class NavigationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (bookridesFragment!=null){
+            bookridesFragment.onActivityResult(requestCode,resultCode,data);
+        }
+
     }
 }
