@@ -121,7 +121,10 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.your_rider) {
             Intent intent = new Intent(NavigationActivity.this, MyRidesActivity.class);
             startActivity(intent);
-
+        } else if (id == R.id.Book_yourride) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.framecontainer, new BookYourRideFragment())
+                    .commit();
         } else if (id == R.id.free_rider) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framecontainer, new KnowYourRideFragment())

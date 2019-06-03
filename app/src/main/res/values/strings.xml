@@ -20,6 +20,8 @@
     <string name="gps_txt_one">accurate pickup</string>
     <string name="nav_profile_progress_txt">Complete your Profile( 35% )</string>
     <string name="Rs">\u20B9</string>
+    <string name="close">Close Sheet</string>
+    <string name="expand">Expand Sheet</string>
     <string name="Rs_one">"\u20B9" 15.0</string>
     <string name="invalid_mobile">Please Enter Valid Phone!!!</string>
     <string name="valid_phone">Enter 10 Number Phone!!!</string>

@@ -14,17 +14,15 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -32,7 +30,6 @@ import com.chalojmd.R;
 import com.chalojmd.activitis.NavigationActivity;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -46,8 +43,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.DirectionsApi;
@@ -86,6 +83,9 @@ public class BookYourRideFragment extends Fragment implements
     private GoogleMap mMap;
     LatLng sourceLocation;
     LatLng destLocation;
+    Button buttonRideNow;
+    private BottomSheetBehavior sheetBehavior;
+    private Button btnBottomSheet;
     private TextView sourceEdt;
     private TextView destEdt;
     private LocationManager locationManager;
@@ -97,8 +97,10 @@ public class BookYourRideFragment extends Fragment implements
     @Override
     public void onAttach(Context context) {
 
+
         super.onAttach(context);
         navigationActivity = (NavigationActivity) getActivity();
+
     }
 
     @Override
@@ -123,6 +125,7 @@ public class BookYourRideFragment extends Fragment implements
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
         locationManager = (LocationManager) navigationActivity.getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this); //You can also use LocationManager.GPS_PROVIDER and LocationManager.PASSIVE_PROVIDER
         return view;
@@ -131,6 +134,7 @@ public class BookYourRideFragment extends Fragment implements
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
 
 
         sourceEdt.setOnClickListener(new View.OnClickListener() {
@@ -168,7 +172,7 @@ public class BookYourRideFragment extends Fragment implements
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode){
+        switch (requestCode) {
             case GMS_PLACE_SEARCH_SOURCE_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
                     Place place = PlaceAutocomplete.getPlace(navigationActivity, data);
@@ -208,21 +212,26 @@ public class BookYourRideFragment extends Fragment implements
     }
 
     private void drawPathWithBound() {
-        if (sourceLocation!=null && destLocation!=null){
+        if (sourceLocation != null && destLocation != null) {
+            if (mMap == null) {
+                return;
+            }
+            mMap.clear();
+
+            LatLng barcelona = new LatLng(sourceLocation.latitude, sourceLocation.longitude);
+            mMap.addMarker(new MarkerOptions().position(barcelona).title("Pick up").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)));
 
 
-            LatLng barcelona = new LatLng(sourceLocation.latitude,sourceLocation.longitude);
-            mMap.addMarker(new MarkerOptions().position(barcelona).title("Pick up"));
+            LatLng madrid = new LatLng(destLocation.latitude, destLocation.longitude);
+            mMap.addMarker(new MarkerOptions().position(madrid).title("Drop").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon1)));
 
-            LatLng madrid = new LatLng(destLocation.latitude,destLocation.longitude);
-            mMap.addMarker(new MarkerOptions().position(madrid).title("Drop"));
 
             //Define list to get all latlng for the route
             List<LatLng> path = new ArrayList();
             //Execute Directions API request
             GeoApiContext context = new GeoApiContext.Builder().apiKey(getString(R.string.google_maps_key))
                     .build();
-            DirectionsApiRequest req = DirectionsApi.getDirections(context, sourceLocation.latitude+","+sourceLocation.longitude, destLocation.latitude+","+destLocation.longitude);
+            DirectionsApiRequest req = DirectionsApi.getDirections(context, sourceLocation.latitude + "," + sourceLocation.longitude, destLocation.latitude + "," + destLocation.longitude);
             try {
                 DirectionsResult res = req.await();
 
@@ -230,14 +239,14 @@ public class BookYourRideFragment extends Fragment implements
                 if (res.routes != null && res.routes.length > 0) {
                     DirectionsRoute route = res.routes[0];
 
-                    if (route.legs !=null) {
-                        for(int i=0; i<route.legs.length; i++) {
+                    if (route.legs != null) {
+                        for (int i = 0; i < route.legs.length; i++) {
                             DirectionsLeg leg = route.legs[i];
                             if (leg.steps != null) {
-                                for (int j=0; j<leg.steps.length;j++){
+                                for (int j = 0; j < leg.steps.length; j++) {
                                     DirectionsStep step = leg.steps[j];
-                                    if (step.steps != null && step.steps.length >0) {
-                                        for (int k=0; k<step.steps.length;k++){
+                                    if (step.steps != null && step.steps.length > 0) {
+                                        for (int k = 0; k < step.steps.length; k++) {
                                             DirectionsStep step1 = step.steps[k];
                                             EncodedPolyline points1 = step1.polyline;
                                             if (points1 != null) {
@@ -263,7 +272,7 @@ public class BookYourRideFragment extends Fragment implements
                         }
                     }
                 }
-            } catch(Exception ex) {
+            } catch (Exception ex) {
                 Log.e(TAG, ex.getLocalizedMessage());
             }
 
@@ -312,6 +321,7 @@ public class BookYourRideFragment extends Fragment implements
         mMap.getUiSettings().setCompassEnabled(true);
     }
 
+
     @Override
     public void onLocationChanged(Location location) {
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
@@ -334,6 +344,7 @@ public class BookYourRideFragment extends Fragment implements
     public void onProviderDisabled(String provider) {
 
     }
+
 
 
 }
