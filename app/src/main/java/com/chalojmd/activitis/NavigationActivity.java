@@ -3,6 +3,7 @@ package com.chalojmd.activitis;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +29,8 @@ public class NavigationActivity extends AppCompatActivity
     NavigationView navigationView;
     private RelativeLayout relativeLayout;
     public  Toolbar toolbar;
+    private BottomSheetBehavior sheetBehavior;
+    private Button btnBottomSheet;
     private BookYourRideFragment bookridesFragment;
 
     @Override
@@ -44,6 +48,7 @@ public class NavigationActivity extends AppCompatActivity
                 startActivity(new Intent(NavigationActivity.this, ProfileActivity.class));
             }
         });
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

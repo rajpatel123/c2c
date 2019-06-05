@@ -126,10 +126,6 @@
        </activity>
         <activity android:name=".activitis.NavigationActivity"
             android:screenOrientation="portrait"/>
-        <activity
-            android:name=".activitis.SignupActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_action_bar" />
     </application>
 
 </manifest>

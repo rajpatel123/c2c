@@ -23,8 +23,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chalojmd.R;
 import com.chalojmd.activitis.NavigationActivity;
@@ -83,7 +86,7 @@ public class BookYourRideFragment extends Fragment implements
     private GoogleMap mMap;
     LatLng sourceLocation;
     LatLng destLocation;
-    Button buttonRideNow;
+    RelativeLayout buttonRideNow;
     private BottomSheetBehavior sheetBehavior;
     private Button btnBottomSheet;
     private TextView sourceEdt;
@@ -92,6 +95,7 @@ public class BookYourRideFragment extends Fragment implements
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
     ProgressBar progressBar;
+    LinearLayout linearLayoutView;
 
 
     @Override
@@ -114,10 +118,13 @@ public class BookYourRideFragment extends Fragment implements
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.book_your_ride_fragment, container, false);
+
         if (Build.VERSION.SDK_INT >= 21) {
             navigationActivity.getWindow().setStatusBarColor(ContextCompat.getColor(navigationActivity, R.color.transparent));
         }
 
+        buttonRideNow=view.findViewById(R.id.relative);
+        linearLayoutView=view.findViewById(R.id.bottom_sheet);
         navigationActivity.toolbar.setBackgroundColor(ContextCompat.getColor(navigationActivity, R.color.transparent));
         progressBar = view.findViewById(R.id.loader);
         sourceEdt = view.findViewById(R.id.source);
@@ -125,7 +132,21 @@ public class BookYourRideFragment extends Fragment implements
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        buttonRideNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonRideNow.setVisibility(View.GONE);
+                linearLayoutView.setVisibility(View.VISIBLE);
+            }
+        });
 
+        linearLayoutView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonRideNow.setVisibility(View.VISIBLE);
+                linearLayoutView.setVisibility(View.GONE);
+            }
+        });
         locationManager = (LocationManager) navigationActivity.getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this); //You can also use LocationManager.GPS_PROVIDER and LocationManager.PASSIVE_PROVIDER
         return view;
@@ -210,6 +231,21 @@ public class BookYourRideFragment extends Fragment implements
 
 
     }
+    private  void DistanceBetweenSourceAndDestination(){
+
+        Location locationA = new Location("point A");
+        locationA.setLatitude(sourceLocation.latitude);
+        locationA.setLongitude(sourceLocation.longitude);
+
+        Location locationB = new Location("point B");
+        locationB.setLatitude(destLocation.latitude);
+        locationB.setLongitude(destLocation.longitude);
+
+        double distance = locationA.distanceTo(locationB)/1000;
+        Toast.makeText(navigationActivity,""+distance+"km", Toast.LENGTH_SHORT).show();
+
+
+    }
 
     private void drawPathWithBound() {
         if (sourceLocation != null && destLocation != null) {
@@ -217,15 +253,14 @@ public class BookYourRideFragment extends Fragment implements
                 return;
             }
             mMap.clear();
-
             LatLng barcelona = new LatLng(sourceLocation.latitude, sourceLocation.longitude);
-            mMap.addMarker(new MarkerOptions().position(barcelona).title("Pick up").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)));
-
+            mMap.addMarker(new MarkerOptions().position(barcelona).title("Pick up").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_iconping1)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(barcelona, 6));
 
             LatLng madrid = new LatLng(destLocation.latitude, destLocation.longitude);
-            mMap.addMarker(new MarkerOptions().position(madrid).title("Drop").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon1)));
-
-
+            mMap.addMarker(new MarkerOptions().position(madrid).title("Drop").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_iconping2)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 6));
+            DistanceBetweenSourceAndDestination();
             //Define list to get all latlng for the route
             List<LatLng> path = new ArrayList();
             //Execute Directions API request
@@ -278,13 +313,16 @@ public class BookYourRideFragment extends Fragment implements
 
             //Draw the polyline
             if (path.size() > 0) {
-                PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLACK).width(7);
+                PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLACK).width(11);
                 mMap.addPolyline(opts);
+
             }
+
+                   //   yha hoga distance from travel
 
             mMap.getUiSettings().setZoomControlsEnabled(true);
 
-            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(zaragoza, 6));
+           //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(zaragoza, 6));
         }
     }
 

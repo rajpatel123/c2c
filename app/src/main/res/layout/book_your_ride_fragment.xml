@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -19,18 +20,15 @@
                 android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:padding="10dp"
-                android:gravity="center"
-
+                android:padding="13dp"
+                android:gravity="left"
                 android:text="Select pick up point"
 
                 android:textSize="@dimen/txt_medium"
-                android:drawableLeft="@drawable/circle_background_myrides_green"
+                android:drawableRight="@drawable/circle_background_myrides_green"
                 android:background="@drawable/oval_shape"
                 android:elevation="5dp"
-
                 android:minHeight="?attr/actionBarSize" />
-
 
 
             <TextView
@@ -38,12 +36,13 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:drawableLeft="@drawable/circle_background_myrides_red"
+                android:drawableRight="@drawable/circle_background_myrides_red"
                 android:layout_below="@+id/source"
                 android:background="@drawable/oval_shape"
-                android:padding="10dp"
+                android:padding="13dp"
                 android:text="Select drop point"
-                android:gravity="center"
+                android:gravity="left"
+
                 android:textSize="@dimen/txt_medium"
                 android:elevation="5dp"
 
@@ -65,39 +64,50 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
         <RelativeLayout
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
-            android:gravity="bottom"
 
+            android:gravity="bottom"
             android:elevation="@dimen/_16dp">
 
+            <include
+                layout="@layout/bottomsheet_layout"
 
-
-            <TextView
-
-                android:id="@+id/button_open_bottomsheet"
-                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:text="Ride Now"
+                android:layout_width="match_parent" />
 
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/txt_medium"
-                android:elevation="5dp"
-
-                android:minHeight="?attr/actionBarSize" />
-            <View
-                android:id="@+id/devider2"
+            <RelativeLayout
+                android:id="@+id/relative"
                 android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_below="@+id/button_open_bottomsheet"
-                android:background="@color/greenmoney" />
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:id="@+id/button_open_bottomsheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    android:text="Ride Now"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/txt_medium"
+                    android:elevation="5dp"
+                    android:minHeight="?attr/actionBarSize" />
+
+                <View
+                    android:id="@+id/devider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/button_open_bottomsheet"
+                    android:background="@color/greenmoney" />
+
+            </RelativeLayout>
 
 
         </RelativeLayout>
