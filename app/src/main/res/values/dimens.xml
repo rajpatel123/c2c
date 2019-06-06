@@ -40,4 +40,9 @@
     <dimen name="padding_3">3sp</dimen>
     <dimen name="margin_180">180sp</dimen>
     <dimen name="txt_medium">14sp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="detail_backdrop_height">30</dimen>
 </resources>

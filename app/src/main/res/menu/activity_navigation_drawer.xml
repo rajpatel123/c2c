@@ -16,6 +16,10 @@
             android:id="@+id/free_rider"
             android:icon="@drawable/freerides"
             android:title="Free Rides"/>
+        <item
+            android:id="@+id/Book_yourride"
+            android:icon="@drawable/freerides"
+            android:title="Book Your Ride"/>
 
         <item
             android:id="@+id/notifications"

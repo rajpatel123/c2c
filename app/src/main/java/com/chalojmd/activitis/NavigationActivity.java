@@ -2,6 +2,8 @@ package com.chalojmd.activitis;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +28,17 @@ public class NavigationActivity extends AppCompatActivity
     private TextView textViewprofile;
     NavigationView navigationView;
     private RelativeLayout relativeLayout;
+    public  Toolbar toolbar;
+    private BottomSheetBehavior sheetBehavior;
+    private Button btnBottomSheet;
+    private BookYourRideFragment bookridesFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
         View viewHeader = navigationView.inflateHeaderView(R.layout.nav_header_navigation);
         relativeLayout = viewHeader.findViewById(R.id.relative_top);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +48,7 @@ public class NavigationActivity extends AppCompatActivity
                 startActivity(new Intent(NavigationActivity.this, ProfileActivity.class));
             }
         });
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,7 +67,8 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        replaceFragment(new BookYourRideFragment());
+       bookridesFragment= new BookYourRideFragment();
+        replaceFragment(bookridesFragment);
 
 
     }
@@ -116,7 +126,10 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.your_rider) {
             Intent intent = new Intent(NavigationActivity.this, MyRidesActivity.class);
             startActivity(intent);
-
+        } else if (id == R.id.Book_yourride) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.framecontainer, new BookYourRideFragment())
+                    .commit();
         } else if (id == R.id.free_rider) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framecontainer, new KnowYourRideFragment())
@@ -142,5 +155,15 @@ public class NavigationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (bookridesFragment!=null){
+            bookridesFragment.onActivityResult(requestCode,resultCode,data);
+        }
+
     }
 }
