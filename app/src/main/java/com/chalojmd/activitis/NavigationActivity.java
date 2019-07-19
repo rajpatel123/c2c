@@ -29,6 +29,7 @@ public class NavigationActivity extends AppCompatActivity
     NavigationView navigationView;
     private RelativeLayout relativeLayout;
     public  Toolbar toolbar;
+    private TextView calltodriver;
     private BottomSheetBehavior sheetBehavior;
     private Button btnBottomSheet;
     private BookYourRideFragment bookridesFragment;
@@ -39,6 +40,7 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
         View viewHeader = navigationView.inflateHeaderView(R.layout.nav_header_navigation);
         relativeLayout = viewHeader.findViewById(R.id.relative_top);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +69,7 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-       bookridesFragment= new BookYourRideFragment();
+        bookridesFragment= new BookYourRideFragment();
         replaceFragment(bookridesFragment);
 
 
@@ -123,7 +125,7 @@ public class NavigationActivity extends AppCompatActivity
             Intent intent = new Intent(NavigationActivity.this, PaymentActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.your_rider) {
+        } else if (id == R.id.myride) {
             Intent intent = new Intent(NavigationActivity.this, MyRidesActivity.class);
             startActivity(intent);
         } else if (id == R.id.Book_yourride) {

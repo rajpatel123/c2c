@@ -1,5 +1,6 @@
 package com.chalojmd.Retrofit;
 
+import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
@@ -24,5 +25,8 @@ public class RestClient {
         RetrofitClient.getClient().updateUser(updateUserRequest).enqueue(callback);
     }
 
+    public static void myAllRides( Callback<TestResponse> callback) {
+        RetrofitClient.getClient().getAllRides().enqueue(callback);
+    }
 
 }

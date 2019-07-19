@@ -31,7 +31,6 @@ import com.chalojmd.model.verifyOtp.VerifyOTPResponse;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,7 +38,7 @@ import retrofit2.Response;
 
 public class VerifyOtpActivity extends AppCompatActivity {
 
-    @BindView(R.id.crossBtn)
+    @BindView(R.id.backButton)
     AppCompatImageView crossBtn;
 
     @BindView(R.id.otpTxt)
@@ -118,7 +117,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
 
 
 
-    @OnClick(R.id.crossBtn)
+    @OnClick(R.id.backButton)
     public void onCrossBtnClick() { finish();
     }
 

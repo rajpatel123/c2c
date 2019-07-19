@@ -17,36 +17,34 @@
 
             <TextView
                 android:id="@+id/source"
-                android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:padding="13dp"
-                android:gravity="left"
-                android:text="Select pick up point"
-
-                android:textSize="@dimen/txt_medium"
-                android:drawableRight="@drawable/circle_background_myrides_green"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/oval_shape"
+                android:drawableRight="@drawable/circle_background_myrides_green"
                 android:elevation="5dp"
-                android:minHeight="?attr/actionBarSize" />
+                android:gravity="left"
+                android:minHeight="?attr/actionBarSize"
+                android:padding="13dp"
+                android:text="Select pick up point"
+                android:textSize="@dimen/txt_medium" />
 
 
             <TextView
                 android:id="@+id/destination"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:drawableRight="@drawable/circle_background_myrides_red"
                 android:layout_below="@+id/source"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval_shape"
+                android:drawableRight="@drawable/circle_background_myrides_red"
+                android:elevation="5dp"
+                android:gravity="left"
+                android:minHeight="?attr/actionBarSize"
                 android:padding="13dp"
                 android:text="Select drop point"
-                android:gravity="left"
 
-                android:textSize="@dimen/txt_medium"
-                android:elevation="5dp"
-
-                android:minHeight="?attr/actionBarSize" />
+                android:textSize="@dimen/txt_medium" />
 
 
         </RelativeLayout>
@@ -66,23 +64,31 @@
             android:layout_height="match_parent" />
 
         <RelativeLayout
-            android:layout_gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="@dimen/_16dp"
+          >
 
-            android:gravity="bottom"
-            android:elevation="@dimen/_16dp">
+
+
+            <include
+            layout="@layout/driverlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"/>
 
             <include
                 layout="@layout/bottomsheet_layout"
 
-                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:layout_alignParentBottom="true" />
 
             <RelativeLayout
                 android:id="@+id/relative"
                 android:layout_width="match_parent"
+
+
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -91,14 +97,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:elevation="5dp"
+                    android:gravity="center"
+
+
+                    android:minHeight="?attr/actionBarSize"
                     android:padding="10dp"
                     android:text="Ride Now"
-                    android:gravity="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="@dimen/txt_medium"
-                    android:elevation="5dp"
-                    android:minHeight="?attr/actionBarSize" />
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/devider2"

@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -86,6 +87,7 @@ public class BookYourRideFragment extends Fragment implements
     private GoogleMap mMap;
     LatLng sourceLocation;
     LatLng destLocation;
+    private TextView calltodriver;
     RelativeLayout buttonRideNow;
     private BottomSheetBehavior sheetBehavior;
     private Button btnBottomSheet;
@@ -95,7 +97,9 @@ public class BookYourRideFragment extends Fragment implements
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
     ProgressBar progressBar;
-    LinearLayout linearLayoutView;
+    LinearLayout linearLayoutView,linearLayoutDriver;
+    private Button confirmbutton;
+
 
 
     @Override
@@ -128,9 +132,20 @@ public class BookYourRideFragment extends Fragment implements
         navigationActivity.toolbar.setBackgroundColor(ContextCompat.getColor(navigationActivity, R.color.transparent));
         progressBar = view.findViewById(R.id.loader);
         sourceEdt = view.findViewById(R.id.source);
+        linearLayoutDriver=view.findViewById(R.id.driverlinear);
         destEdt = view.findViewById(R.id.destination);
+        calltodriver= view.findViewById(R.id.calldriver);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        confirmbutton= view.findViewById(R.id.confirmbooking);
+        confirmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linearLayoutDriver.setVisibility(View.VISIBLE);
+                linearLayoutView.setVisibility(View.GONE);
+
+            }
+        });
 
         buttonRideNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +170,15 @@ public class BookYourRideFragment extends Fragment implements
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        calltodriver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                callIntent.setData(Uri.parse("tel:" + "9315920796"));
+                getActivity().startActivity(callIntent);
+            }
+        });
 
 
 
@@ -257,12 +281,14 @@ public class BookYourRideFragment extends Fragment implements
             mMap.addMarker(new MarkerOptions().position(barcelona).title("Pick up").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_iconping1)));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(barcelona, 6));
 
+
             LatLng madrid = new LatLng(destLocation.latitude, destLocation.longitude);
             mMap.addMarker(new MarkerOptions().position(madrid).title("Drop").icon(BitmapDescriptorFactory.fromResource(R.drawable.location_iconping2)));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 6));
-            DistanceBetweenSourceAndDestination();
+
             //Define list to get all latlng for the route
             List<LatLng> path = new ArrayList();
+
             //Execute Directions API request
             GeoApiContext context = new GeoApiContext.Builder().apiKey(getString(R.string.google_maps_key))
                     .build();
@@ -315,6 +341,7 @@ public class BookYourRideFragment extends Fragment implements
             if (path.size() > 0) {
                 PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLACK).width(11);
                 mMap.addPolyline(opts);
+                DistanceBetweenSourceAndDestination();
 
             }
 
@@ -341,6 +368,7 @@ public class BookYourRideFragment extends Fragment implements
         mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
+
 
             }
         });

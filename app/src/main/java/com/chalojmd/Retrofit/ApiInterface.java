@@ -1,6 +1,7 @@
 package com.chalojmd.Retrofit;
 
 
+import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
@@ -29,7 +30,8 @@ public interface ApiInterface {
    @POST("updateuser")
    Call<UpdateUserResponse> updateUser(@Body UpdateUserRequest updateUserRequest);
 
-
+   @POST("http://vrok.in/grofer_api/list")
+   Call<TestResponse>getAllRides();
 
 
 

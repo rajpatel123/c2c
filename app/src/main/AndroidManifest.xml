@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.chalojmd">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -23,16 +22,16 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activitis.rider.VerifyOtpActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_places_key" />
 
         <activity android:name=".activitis.UpdateUserActivity" />
-
         <activity
             android:name=".activitis.rider.RideDetailsActivity"
             android:label="Ride Details"
@@ -43,8 +42,6 @@
             android:label="Favorites"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_nav_toolbar" />
-
-
         <activity android:name=".activitis.ChooseLanguageActivity" />
         <activity
             android:name=".activitis.SettingActivity"
@@ -91,7 +88,7 @@
             android:name=".activitis.PhoneLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
-       <activity
+        <activity
             android:name=".activitis.rider.DropSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
@@ -99,8 +96,6 @@
             android:name=".activitis.PickupSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
-
-
         <activity
             android:name=".activitis.MapsActivity"
             android:label="@string/title_activity_maps" />
@@ -112,20 +107,18 @@
             android:label="Profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_no_actionbar" />
+        <activity
+            android:name=".activitis.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-       <activity android:name=".activitis.SplashActivity"
-           android:screenOrientation="portrait">
-
-
-
-           <intent-filter>
-               <action android:name="android.intent.action.MAIN" />
-
-               <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
-       </activity>
-        <activity android:name=".activitis.NavigationActivity"
-            android:screenOrientation="portrait"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activitis.NavigationActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
