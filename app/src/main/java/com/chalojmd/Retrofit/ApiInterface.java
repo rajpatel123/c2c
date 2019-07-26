@@ -4,6 +4,8 @@ package com.chalojmd.Retrofit;
 import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
+import com.chalojmd.model.otpverify.VerifyOtpRequest;
+import com.chalojmd.model.otpverify.VerifyOtpResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
@@ -36,7 +38,8 @@ public interface ApiInterface {
    Call<TestResponse>getAllRides();
 
    @POST("http://vrok.in/c2c_dev/login_register")
-   Call<LoginResponse>loginUser(@Body LoginRequest loginRequest);
+    Call<LoginResponse>loginUser(@Body LoginRequest loginRequest);
 
-
+   @POST("www.vrok.in/c2c_dev/otp_verify")
+   Call<VerifyOtpResponse>verifyOtp(@Body VerifyOtpRequest verifyOtpRequest);
    }

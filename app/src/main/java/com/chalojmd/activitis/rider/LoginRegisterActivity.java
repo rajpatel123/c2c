@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.chalojmd.R;
 import com.chalojmd.Retrofit.RestClient;
+import com.chalojmd.Utils.Utils;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
 
@@ -65,15 +66,17 @@ public class LoginRegisterActivity extends AppCompatActivity {
             loginRequest.setMobile(phone_Number);
             loginRequest.setPassword(user_Password);
 
-
+            Utils.showProgressDialog(this);
             RestClient.loginNewUser(loginRequest, new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-
+                    Utils.dismissProgressDialog();
                         if (response.body() != null) {
                             if (response.body().getUserStatus().equalsIgnoreCase("1") ) {
                                 Intent i = new Intent(LoginRegisterActivity.this, DriverLicenseActivity.class);
                                 Toast.makeText(LoginRegisterActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+
 
                                 startActivity(i);
                             } else if (response.body().getUserStatus().equalsIgnoreCase("0")){

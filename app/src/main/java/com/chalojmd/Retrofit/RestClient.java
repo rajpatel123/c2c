@@ -3,6 +3,8 @@ package com.chalojmd.Retrofit;
 import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
+import com.chalojmd.model.otpverify.VerifyOtpRequest;
+import com.chalojmd.model.otpverify.VerifyOtpResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
@@ -33,6 +35,10 @@ public class RestClient {
 
     public static void loginNewUser(LoginRequest loginRequest, Callback<LoginResponse> callback) {
         RetrofitClient.getClient().loginUser(loginRequest).enqueue(callback);
+    }
+
+    public static void verifyByOtp(VerifyOtpRequest verifyOtpRequest, Callback<VerifyOtpResponse> callback) {
+        RetrofitClient.getClient().verifyOtp(verifyOtpRequest).enqueue(callback);
     }
 
 }

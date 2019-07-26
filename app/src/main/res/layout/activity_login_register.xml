@@ -96,7 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:hint="Phone number"
-                   android:background="@null"
+                    android:background="@null"
+                    android:inputType="number"
                     android:textSize="@dimen/sub_title"
                     android:textStyle="bold" />
             </LinearLayout>

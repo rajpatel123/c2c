@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrationFormActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Registration Profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center
+"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_30"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <EditText
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <EditText
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DateOfbirth" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
