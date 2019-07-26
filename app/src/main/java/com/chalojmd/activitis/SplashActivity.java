@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.chalojmd.R;
 import com.chalojmd.Utils.C2CPref;
 import com.chalojmd.Utils.Constants;
+import com.chalojmd.activitis.rider.LoginRegisterActivity;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
@@ -20,11 +21,11 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 if (C2CPref.getBoolean(SplashActivity.this, Constants.IS_LOOGED_IN)){
-                    Intent i = new Intent(SplashActivity.this, NavigationActivity.class);
+                    Intent i = new Intent(SplashActivity.this, LoginRegisterActivity.class);
                     startActivity(i);
                     finish();
                 }else{
-                    Intent i = new Intent(SplashActivity.this, NavigationActivity.class);
+                    Intent i = new Intent(SplashActivity.this, LoginRegisterActivity.class);
                     startActivity(i);
                     finish();
                 }

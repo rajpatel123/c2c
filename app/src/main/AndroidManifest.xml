@@ -25,7 +25,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activitis.rider.VerifyOtpActivity"></activity>
+        <activity android:name=".activitis.rider.VichelDetailActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".activitis.rider.DriverLicenseActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activitis.rider.PhotoOfDrivingLicense" />
+        <activity android:name=".activitis.rider.RegistrationCompleteActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activitis.rider.OtpVerifyActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activitis.rider.LoginRegisterActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activitis.rider.VerifyOtpActivity"
+            android:theme="@style/AppTheme"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

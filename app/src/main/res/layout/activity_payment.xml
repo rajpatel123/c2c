@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activitis.PaymentActivity">
 
+
     <LinearLayout
         android:id="@+id/linear_top"
         android:layout_width="wrap_content"
@@ -20,6 +21,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/txt_heading_two" />
     </LinearLayout>
+
 
     <RelativeLayout
         android:id="@+id/relative_wallet"

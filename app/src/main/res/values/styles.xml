@@ -2,8 +2,8 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/black_primary</item>
-        <item name="colorAccent">@color/logintextcolor</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorAccent">@color/yellow</item>
     </style>
 
     <style name="AppTheme_action_bar" parent="Theme.AppCompat.Light.DarkActionBar">
