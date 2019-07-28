@@ -3,8 +3,10 @@ package com.chalojmd.Retrofit;
 import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
-import com.chalojmd.model.otpverify.VerifyOtpRequest;
-import com.chalojmd.model.otpverify.VerifyOtpResponse;
+import com.chalojmd.model.otpverify.VerifyNewOtpRequest;
+import com.chalojmd.model.otpverify.VerifyNewOtpResponse;
+import com.chalojmd.model.registration.RegistrationRequest;
+import com.chalojmd.model.registration.RegistrationResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
@@ -37,8 +39,11 @@ public class RestClient {
         RetrofitClient.getClient().loginUser(loginRequest).enqueue(callback);
     }
 
-    public static void verifyByOtp(VerifyOtpRequest verifyOtpRequest, Callback<VerifyOtpResponse> callback) {
-        RetrofitClient.getClient().verifyOtp(verifyOtpRequest).enqueue(callback);
+    public static void verifyByOtp(VerifyNewOtpRequest verifyNewOtpRequest, Callback<VerifyNewOtpResponse> callback) {
+        RetrofitClient.getClient().verifyOtp(verifyNewOtpRequest).enqueue(callback);
+    }
+    public static void  registerNewUser(RegistrationRequest registrationRequest, Callback<RegistrationResponse> callback) {
+        RetrofitClient.getClient().registerUser(registrationRequest).enqueue(callback);
     }
 
 }

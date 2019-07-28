@@ -14,14 +14,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "API_SERVER_IP", "\"http://13.234.161.7/\""
+            buildConfigField "String", "API_SERVER_IP", "\" http://vrok.in/c2c_dev/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         debug {
             minifyEnabled false
             multiDexEnabled true
-            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.101:8080\""
+            buildConfigField "String", "API_SERVER_IP", "\" http://vrok.in/c2c_dev/\""
             //buildConfigField "String", "API_SERVER_IP", "\"http://13.126.93.95:8080\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -4,14 +4,14 @@ package com.chalojmd.Retrofit;
 import com.chalojmd.model.TestResponse;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
-import com.chalojmd.model.otpverify.VerifyOtpRequest;
-import com.chalojmd.model.otpverify.VerifyOtpResponse;
+import com.chalojmd.model.otpverify.VerifyNewOtpRequest;
+import com.chalojmd.model.otpverify.VerifyNewOtpResponse;
+import com.chalojmd.model.registration.RegistrationRequest;
+import com.chalojmd.model.registration.RegistrationResponse;
 import com.chalojmd.model.udateUser.UpdateUserRequest;
 import com.chalojmd.model.udateUser.UpdateUserResponse;
 import com.chalojmd.model.verifyMobile.VerifyMobileResponse;
 import com.chalojmd.model.verifyOtp.VerifyOTPResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -40,6 +40,9 @@ public interface ApiInterface {
    @POST("http://vrok.in/c2c_dev/login_register")
     Call<LoginResponse>loginUser(@Body LoginRequest loginRequest);
 
-   @POST("www.vrok.in/c2c_dev/otp_verify")
-   Call<VerifyOtpResponse>verifyOtp(@Body VerifyOtpRequest verifyOtpRequest);
+   @POST("http://vrok.in/c2c_dev/otp_verify")
+   Call<VerifyNewOtpResponse>verifyOtp(@Body VerifyNewOtpRequest verifyNewOtpRequest);
+
+   @POST("http://vrok.in/c2c_dev/update_user")
+   Call<RegistrationResponse>registerUser(@Body RegistrationRequest registrationRequest);
    }

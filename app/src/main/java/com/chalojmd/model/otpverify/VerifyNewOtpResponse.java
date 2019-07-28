@@ -1,18 +1,20 @@
 package com.chalojmd.model.otpverify;
 
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class VerifyOtpResponse {
+public class VerifyNewOtpResponse {
 
-@SerializedName("status")
+@SerializedName("Status")
 @Expose
 private Boolean status;
-@SerializedName("message")
+@SerializedName("Message")
 @Expose
 private String message;
+@SerializedName("Otp_Status")
+@Expose
+private String otpStatus;
 
 public Boolean getStatus() {
 return status;
@@ -28,6 +30,14 @@ return message;
 
 public void setMessage(String message) {
 this.message = message;
+}
+
+public String getOtpStatus() {
+return otpStatus;
+}
+
+public void setOtpStatus(String otpStatus) {
+this.otpStatus = otpStatus;
 }
 
 }

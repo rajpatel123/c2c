@@ -1,88 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistrationFormActivity">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/yellow"
-        android:gravity="center"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="@dimen/_10dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:text="Registration Profile"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center
-"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher" />
-
+    tools:context=".activitis.rider.RegistrationFormActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/margin_30"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+
             android:orientation="vertical">
 
-
-            <EditText
-                android:layout_marginRight="@dimen/margin_30"
-                android:layout_marginLeft="@dimen/margin_30"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name" />
+                android:orientation="horizontal">
 
-            <EditText
-                android:layout_marginRight="@dimen/margin_30"
-                android:layout_marginLeft="@dimen/margin_30"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email" />
 
-            <EditText
-                android:layout_marginRight="@dimen/margin_30"
-                android:layout_marginLeft="@dimen/margin_30"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="DateOfbirth" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back_arrow_icon" />
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/faculty_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/margin_30"
+                android:gravity="center"
+                android:paddingLeft="10sp"
+                android:paddingTop="5sp"
+                android:src="@drawable/profile_pictures" />
 
 
         </LinearLayout>
 
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginRight="20dp">
 
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/margin_30"
+                        android:background="@null"
+                        android:hint="Name" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3px"
+                        android:layout_marginLeft="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_20"
+
+                        android:background="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/user_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_30"
+                        android:background="@null"
+                        android:hint="Email" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3px"
+                        android:layout_marginLeft="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_20"
+
+                        android:background="@color/Black" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
+
+
+                        <EditText
+                            android:id="@+id/calender_dob"
+                            android:layout_width="@dimen/margin_180"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_30"
+                            android:layout_marginTop="@dimen/margin_15"
+                            android:background="@null"
+
+
+                            android:hint="D.O.B" />
+
+
+                        <ImageView
+                            android:id="@+id/calenderPicker"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:layout_marginRight="@dimen/margin_15"
+                            android:background="@drawable/calendar_png_icon_15" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3px"
+                        android:layout_marginLeft="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginRight="@dimen/margin_20"
+
+                        android:background="@color/Black" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_25"
+
+                    android:orientation="horizontal">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:hint="Gender"
+                       android:layout_marginRight="60dp"
+                        android:textSize="@dimen/margin_20"
+                        android:layout_height="wrap_content" />
+
+
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_Male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:gravity="center"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Male..."
+                            tools:ignore="OnClick" />
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:onClick="onRadioButtonClicked"
+                            android:text="female"
+                            tools:ignore="OnClick" />
+                    </RadioGroup>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+
+                    android:background="@color/Black" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginBottom="@dimen/margin_30"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_pooler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Pooler"
+                            tools:ignore="OnClick" />
+
+                        <RadioButton
+                            android:id="@+id/radio_Rider"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/margin_20"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Rider.."
+                            tools:ignore="OnClick" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@color/black"
+            android:text="Submit"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:textColor="@color/yellow" />
     </LinearLayout>
 
 
-</LinearLayout>
-
-
+</ScrollView>

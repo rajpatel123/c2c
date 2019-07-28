@@ -45,4 +45,5 @@
     <dimen name="_12dp">12dp</dimen>
     <dimen name="_16dp">16dp</dimen>
     <dimen name="detail_backdrop_height">30</dimen>
+    <dimen name="margin_35">35dp</dimen>
 </resources>

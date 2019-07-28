@@ -25,7 +25,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RegistrationFormActivity"></activity>
+        <activity android:name=".activitis.rider.RegistrationFormActivity"
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".activitis.rider.VichelDetailActivity"
             android:theme="@style/AppTheme" />

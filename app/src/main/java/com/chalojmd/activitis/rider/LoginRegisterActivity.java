@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import com.chalojmd.R;
 import com.chalojmd.Retrofit.RestClient;
+import com.chalojmd.Utils.C2CPref;
 import com.chalojmd.Utils.Utils;
+import com.chalojmd.activitis.NavigationActivity;
 import com.chalojmd.model.loginRegister.LoginRequest;
 import com.chalojmd.model.loginRegister.LoginResponse;
 
@@ -73,17 +75,22 @@ public class LoginRegisterActivity extends AppCompatActivity {
                     Utils.dismissProgressDialog();
                         if (response.body() != null) {
                             if (response.body().getUserStatus().equalsIgnoreCase("1") ) {
-                                Intent i = new Intent(LoginRegisterActivity.this, DriverLicenseActivity.class);
+                                Intent i = new Intent(LoginRegisterActivity.this, NavigationActivity.class);
                                 Toast.makeText(LoginRegisterActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
 
 
                                 startActivity(i);
+                                finish();
                             } else if (response.body().getUserStatus().equalsIgnoreCase("0")){
                                 Intent i = new Intent(LoginRegisterActivity.this, OtpVerifyActivity.class);
                                 startActivity(i);
+                                String  mobileNumber =response.body().getMobile();
+                                String id = response.body().getId();
+                                C2CPref.putString(getApplicationContext(), "mobilenumber", mobileNumber);
+                                C2CPref.putString(getApplicationContext(), "user_id",id);
                                 Toast.makeText(LoginRegisterActivity.this, "you are not Register", Toast.LENGTH_SHORT).show();
-
+                                finish();
                             }
 
 
