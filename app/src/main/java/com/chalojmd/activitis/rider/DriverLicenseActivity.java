@@ -14,7 +14,7 @@ import com.chalojmd.R;
 public class DriverLicenseActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageView imageView0,imageView1,imageView2,imageView3;
- private AnimatorSet animatorSet;
+    private AnimatorSet animatorSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class DriverLicenseActivity extends AppCompatActivity {
         imageView0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // animatorSet= (AnimatorSet) AnimatorInflater.loadAnimator(DriverLicenseActivity.this,R.animator.animation_horizontal_right_in);
+                animatorSet= (AnimatorSet) AnimatorInflater.loadAnimator(DriverLicenseActivity.this,R.animator.animation_horizontal_right_in);
                 animatorSet.setTarget(imageView0);
                 animatorSet.start();
             }

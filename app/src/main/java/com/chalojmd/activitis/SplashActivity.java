@@ -9,12 +9,15 @@ import com.chalojmd.R;
 import com.chalojmd.Utils.C2CPref;
 import com.chalojmd.Utils.Constants;
 import com.chalojmd.activitis.rider.LoginRegisterActivity;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
         new Handler().postDelayed(new Runnable() {
             @Override

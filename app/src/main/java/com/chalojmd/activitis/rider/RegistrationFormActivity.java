@@ -12,7 +12,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.chalojmd.R;
@@ -34,6 +33,9 @@ public class RegistrationFormActivity extends AppCompatActivity {
     private Calendar c;
     private Button submitButton;
     private DatePickerDialog dp;
+    private String gender;
+    private String person;
+    private String dateOfBirth;
 
 
     @Override
@@ -43,6 +45,7 @@ public class RegistrationFormActivity extends AppCompatActivity {
 
         calenderImage = findViewById(R.id.calenderPicker);
         calenderDate = findViewById(R.id.calender_dob);
+        calenderDate.setEnabled(false);
         userIspooler = findViewById(R.id.radio_pooler);
         userIsRider = findViewById(R.id.radio_Rider);
         radioButtonMale = findViewById(R.id.radio_Male);
@@ -51,11 +54,6 @@ public class RegistrationFormActivity extends AppCompatActivity {
         user_Name = findViewById(R.id.user_name);
         submitButton = findViewById(R.id.submitButton);
 
-        if (radioButtonMale.isChecked()) {
-            radioButtonMale.setText("Male");
-
-        } else if (radioButtonFemale.isChecked())
-            radioButtonFemale.setText("Female");
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +74,8 @@ public class RegistrationFormActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                        calenderDate.setText(year + "/" + (month + 1) + "/" + day);
-
+                        calenderDate.setText(year + "/" + (month + 1) + "/" + dayOfMonth);
+                        dateOfBirth = calenderDate.getText().toString();
                     }
                 }, day, year, month);
                 dp.show();
@@ -92,59 +90,119 @@ public class RegistrationFormActivity extends AppCompatActivity {
         switch (v.getId()) {
 
             case R.id.radio_Male:
+
                 if (checked)
-                    break;
+                    radioButtonMale.setText("Male");
+                gender = radioButtonMale.getText().toString().trim();
+                break;
 
             case R.id.radio_female:
                 if (checked)
-                    break;
+                    radioButtonFemale.setText("Female");
+                gender = radioButtonFemale.getText().toString().trim();
+                break;
         }
 
 
     }
 
+    public void onRadioButtonClicked2(View v) {
+        boolean checked = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
+
+            case R.id.radio_pooler:
+                if (checked)
+                    userIspooler.setText("Pooler");
+                person = userIspooler.getText().toString().trim();
+                break;
+
+            case R.id.radio_Rider:
+                if (checked)
+
+                    userIsRider.setText("Rider");
+                person = userIsRider.getText().toString().trim();
+                break;
+        }
+
+
+    }
+
+
     public void validateAndRegistrationForm() {
+        boolean check = true;
         String name_User = user_Name.getText().toString().trim();
-        String email_User  = userEmail_id.getText().toString().trim();
-
-
-
+        String email_User = userEmail_id.getText().toString().trim();
         String userId = C2CPref.getString(getApplicationContext(), "user_id");
-        RegistrationRequest registrationRequest = new RegistrationRequest();
-        registrationRequest.setEmail(email_User);
-        registrationRequest.setName(name_User);
-        registrationRequest.setDob("1995/10/24");
-        registrationRequest.setGender("Male");
-        registrationRequest.setId(userId);
-        registrationRequest.setRole("pooler");
+        String dob = calenderDate.getText().toString().trim();
 
-        RestClient.registerNewUser(registrationRequest, new Callback<RegistrationResponse>() {
-            @Override
-            public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
-                if(response != null){
-                    if(response.body().getStatus() == true){
-                        Intent i = new Intent(RegistrationFormActivity.this,DriverLicenseActivity.class);
-                        startActivity(i);
+        if (name_User.isEmpty()) {
+            user_Name.setError("enter a valid email address");
+            check = false;
+        } else {
+            user_Name.setError(null);
+        }
 
-                        Toast.makeText(RegistrationFormActivity.this, "successfully", Toast.LENGTH_SHORT).show();
-                    }else if(response.body().getStatus() == false){
+        if (email_User.isEmpty()) {
+            userEmail_id.setError("enter a valid email address");
+            check = false;
+        } else {
+            userEmail_id.setError(null);
+        }
 
-                        Toast.makeText(RegistrationFormActivity.this, "failed", Toast.LENGTH_SHORT).show();
+        if (check) {
+
+            RegistrationRequest registrationRequest = new RegistrationRequest();
+            registrationRequest.setEmail(email_User);
+            registrationRequest.setName(name_User);
+            registrationRequest.setDob(dob);
+            registrationRequest.setGender(gender);
+            registrationRequest.setId(userId);
+            registrationRequest.setRole(person);
+
+            RestClient.registerNewUser(registrationRequest, new Callback<RegistrationResponse>() {
+                @Override
+                public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
+                    if (response != null) {
+                        if (response.body().getUserStatus().equalsIgnoreCase("1")) {
+
+                            if (response.body().getRole().equalsIgnoreCase("Pooler")) {
+
+                                Intent i = new Intent(RegistrationFormActivity.this, DriverLicenseActivity.class);
+                                startActivity(i);
+                                Toast.makeText(RegistrationFormActivity.this, "you are a pooler", Toast.LENGTH_SHORT).show();
+
+                            } else if (response.body().getRole().equalsIgnoreCase("Rider")) {
+                                Intent i = new Intent(RegistrationFormActivity.this, AdhaarCardRegisterActivity.class);
+                                Toast.makeText(RegistrationFormActivity.this, "you are a rider", Toast.LENGTH_SHORT).show();
+                                startActivity(i);
+
+                            }
+
+                        } else if (response.body().getStatus() == false) {
+
+                            Toast.makeText(RegistrationFormActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(RegistrationFormActivity.this, "please enter detail", Toast.LENGTH_SHORT).show();
+                        }
+
+
                     }
 
 
                 }
 
+                @Override
+                public void onFailure(Call<RegistrationResponse> call, Throwable t) {
+                    Toast.makeText(RegistrationFormActivity.this, "failed", Toast.LENGTH_SHORT).show();
 
-            }
+                }
+            });
 
-            @Override
-            public void onFailure(Call<RegistrationResponse> call, Throwable t) {
-                Toast.makeText(RegistrationFormActivity.this, "failed", Toast.LENGTH_SHORT).show();
 
-            }
-        });
+        }
 
 
     }
+
+
 }

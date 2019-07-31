@@ -23,10 +23,9 @@ public class VichelDetailActivity extends AppCompatActivity {
         imageViewVicheal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // animatorSet= (AnimatorSet) AnimatorInflater.loadAnimator(VichelDetailActivity.this,R.animator.animation_horizontal_right_in);
-               // animatorSet.setTarget(imageViewVicheal);
-                long l =1 ;
-                animatorSet.setDuration(l);
+               animatorSet= (AnimatorSet) AnimatorInflater.loadAnimator(VichelDetailActivity.this,R.animator.animation_horizontal_right_in);
+               animatorSet.setTarget(imageViewVicheal);
+
                 animatorSet.start();
 
             }

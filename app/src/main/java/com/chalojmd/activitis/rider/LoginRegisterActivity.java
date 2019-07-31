@@ -50,7 +50,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         String user_Password = password.getText().toString();
 
         if (phone_Number.isEmpty() || userPhoneNumber.length() < 4 || userPhoneNumber.length() > 10) {
-            userPhoneNumber.setError("enter a valid email address");
+            userPhoneNumber.setError("enter a valid phoneNumber");
             check = false;
         } else {
             userPhoneNumber.setError(null);
