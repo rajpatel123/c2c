@@ -1,11 +1,13 @@
 package com.chalojmd.activitis.rider;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chalojmd.R;
@@ -22,6 +24,8 @@ import retrofit2.Response;
 public class OtpVerifyActivity extends AppCompatActivity {
     private ImageView imageView,backButton_image;
     private EditText otpEditText;
+    private TextView timertextview;
+    public int counter;
     String mobileNumber;
 
     @Override
@@ -30,7 +34,28 @@ public class OtpVerifyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_otp_verify);
         imageView = findViewById(R.id.next_button2);
         backButton_image=findViewById(R.id.otp_back);
+        timertextview=findViewById(R.id.timmer_textview);
         otpEditText = findViewById(R.id.pin_first_edittext);
+
+
+        otpEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new CountDownTimer(20000, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+                        timertextview.setText("seconds remaining: " + millisUntilFinished / 1000);
+                        //here you can have your logic to set text to edittext
+                    }
+
+                    public void onFinish() {
+                        timertextview.setText("Remaining Times Up");
+                    }
+
+                }.start();
+            }
+            
+        });
 
 
         imageView.setOnClickListener(new View.OnClickListener() {
