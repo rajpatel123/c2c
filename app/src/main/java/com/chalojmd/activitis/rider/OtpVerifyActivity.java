@@ -20,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class OtpVerifyActivity extends AppCompatActivity {
-    private ImageView imageView;
+    private ImageView imageView,backButton_image;
     private EditText otpEditText;
     String mobileNumber;
 
@@ -29,6 +29,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verify);
         imageView = findViewById(R.id.next_button2);
+        backButton_image=findViewById(R.id.otp_back);
         otpEditText = findViewById(R.id.pin_first_edittext);
 
 
@@ -36,6 +37,14 @@ public class OtpVerifyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validateverifyOtp();
+            }
+        });
+
+        backButton_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 Intent i =new Intent(OtpVerifyActivity.this,LoginRegisterActivity.class );
+                 startActivity(i);
             }
         });
     }

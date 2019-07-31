@@ -30,7 +30,7 @@ import retrofit2.Response;
 public class RegistrationFormActivity extends AppCompatActivity {
     private EditText userEmail_id, user_Name, user_DateOfBirth, calenderDate;
     private RadioButton radioButtonMale, radioButtonFemale, userIspooler, userIsRider;
-    private ImageView calenderImage;
+    private ImageView calenderImage,backbtnregistration;
     private Calendar c;
     private Button submitButton;
     private DatePickerDialog dp;
@@ -42,6 +42,7 @@ public class RegistrationFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration_form);
 
         calenderImage = findViewById(R.id.calenderPicker);
+        backbtnregistration=findViewById(R.id.backbtn_registration);
         calenderDate = findViewById(R.id.calender_dob);
         userIspooler = findViewById(R.id.radio_pooler);
         userIsRider = findViewById(R.id.radio_Rider);
@@ -83,6 +84,14 @@ public class RegistrationFormActivity extends AppCompatActivity {
                 dp.show();
 
 
+            }
+        });
+
+        backbtnregistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(RegistrationFormActivity.this,OtpVerifyActivity.class );
+                startActivity(i);
             }
         });
     }
