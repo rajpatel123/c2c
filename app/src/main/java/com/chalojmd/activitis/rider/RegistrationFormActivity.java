@@ -30,9 +30,10 @@ public class RegistrationFormActivity extends AppCompatActivity {
     private EditText userEmail_id, user_Name, user_DateOfBirth, calenderDate;
     private RadioButton radioButtonMale, radioButtonFemale, userIspooler, userIsRider;
     private ImageView calenderImage;
-    private Calendar c;
+
     private Button submitButton;
     private DatePickerDialog dp;
+    private Calendar c;
     private String gender;
     private String person;
     private String dateOfBirth;
